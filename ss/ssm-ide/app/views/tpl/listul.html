@@ -1,0 +1,186 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='listulgroupTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">列表项个数</div>
+                <div class="col-md-6">
+                    <button id="addli" type="button" class="btn btn-success btn-xs" ng-click="addli()">+1</button>
+                    <button id="cutli" type="button" class="btn btn-warning btn-xs" ng-click="cutli()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight" >
+                    <span >列表类型</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.listTypeSelected" class="form-control input-sm"
+                            ng-options="x.name for x in listType"
+                            ng-change="changeListType()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight" >
+                    <span >列表圆角</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="checkbox"
+                           ng-model='$parent.isRoundedCornerChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeIsRoundedCorner()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+
+    <accordionmenu accordionmenu-title='listulitemTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.listItemNoSelected"
+                            ng-options="x for x in listItemNo"
+                            ng-change="changeListItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个列表项
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.listHrefContentInput"
+                           ng-change="changeListHrefContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">正文内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="正文内容"
+                           ng-model="$parent.listItemContentInput"
+                           ng-change="changeListItemContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >正文字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.listItemContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeListItemContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">设为标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.isTitleChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeIsTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">箭头样式</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasArrowChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasArrow()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">向前样式</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasForwardChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasForward()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">气泡数字</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasSmallCounterChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasSmallCounter()">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="气泡数字内容"
+                           ng-model="$parent.smallCounterContentInput"
+                           ng-change="changeSmallCounterContent()">
+                </div>
+            </div>
+        </li>
+        <!--<li>-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-4 col-md-offset-1 textAlignAtRight">显示小标注</div>-->
+                <!--<div class="col-md-6">-->
+                    <!--<input type="checkbox" ng-model='$parent.hasSmallTextChecked'-->
+                           <!--ng-true-value="yes" ng-false-value="no"-->
+                           <!--ng-change="changeHasSmallText()">-->
+                    <!--<input type="text"-->
+                           <!--class="form-control"-->
+                           <!--placeholder="小标注内容"-->
+                           <!--ng-model="$parent.smallTextContentInput"-->
+                           <!--ng-change="changeSmallTextContent()">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='listuleventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.listuleventselect" class="form-control input-sm"
+                            ng-options="x.name for x in listulevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addevent()">新增</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='listuleventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-class="{'curfuncdisplay': {{$parent.listItemNoSelected}} != {{func.childattr.listItemNo}} }">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

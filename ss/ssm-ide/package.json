@@ -1,0 +1,22 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "ejs": "~0.8.5"
+  },
+  "devDependencies": {
+    "connect-livereload": "~0.3.2",
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "archiver": "~0.10.0-alpha",
+    "mime": "~1.2.11",
+    "mongoose": "~3.8.12",
+    "connect": "~2.19.6",
+    "session-mongoose": "~0.4.1"
+  }
+}

@@ -1,0 +1,226 @@
+<style type="text/css">
+    .file-box{ position:relative;width:340px;}
+    .txt{ height:22px; border:1px solid #cdcdcd; width:180px;color: #000000}
+    .mybtn{ background-color:#FFF; border:1px solid #CDCDCD;height:24px; width:70px;}
+    .file{ position:absolute; top:30px; right:170px; height:24px; filter:alpha(opacity:0);opacity: 0;width:10px }
+</style>
+<div ng-model="no" class="linarrow">
+    <accordionmenu accordionmenu-title='iconButtonDivTitle' accordionmenu-show='true' >
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopyiconButtonDiv"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.iconButtonDividInput"
+                           ng-change="changeIconButtonDivid()">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopyiconButtonDiv')">复制</button>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">按钮个数</div>
+                <div class="col-md-6">
+                    <button id="addPanelli" type="button" class="btn btn-success btn-xs" ng-click="addIconButtonDivNum()">+1</button>
+                    <button id="cutPanelli" type="button" class="btn btn-warning btn-xs" ng-click="cutIconButtonDivNum()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.iconButtonDivNumSelected"
+                            ng-options="x for x in iconButtonDivItemNo"
+                            ng-change="changeIconButtonDivItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个按钮
+                </div>
+            </div>
+        </li>
+
+    </accordionmenu>
+
+    <accordionmenu accordionmenu-title='iconButtonDivTitle2' accordionmenu-show='true' ng-show="picHide">
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.iconButtonDivContentInput"
+                           ng-change="changeIconButtonDivContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.iconButtonDivContentColorInput"
+                           ng-change="changeIconButtonDivContentColor()">
+                    <datalist class="colors">
+                    </datalist>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.iconButtonDivBgColorInput"
+                           ng-change="changeIconButtonDivBgColor()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >文字字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.iconButtonDivContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeIconButtonDivContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">图片宽高</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           placeholder="高度"
+                           ng-model="$parent.iconButtonDivHeightAndWidthInput"
+                           ng-change="changeIconButtonDivHeightAndWidth()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变按钮链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.iconButtonDivHrefContentInput"
+                           ng-change="changeIconButtonDivHrefContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">字体大小</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="文字大小"
+                           ng-model="$parent.iconButtonDivFontSizeInput"
+                           ng-change="changeIconButtonDivFontSize()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">图片</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.iconButtonDivHasImgChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeIconButtonDivHasImg()">
+                </div>
+            </div>
+        </li>
+        <li class="file-box">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">选择图片</div>
+                <div class="col-md-6">
+                    <form method="post"   enctype="multipart/form-data">
+                        <input type='text' name='textfield' class="form-control input-sm" id='mytextfield' class='txt'/>
+                        <input type='button' class='btn btn-success btn-xs' value='浏览图片' />
+                        <input type='reset' class='btn btn-success btn-xs' value='取消选择' />
+                        <input type="file" name="upfile" id="fileToUpload" class="file" onchange="mytest()"/>
+                        <br><input type="submit" value="上传图片" class="btn btn-success btn-xs" ng-click="uploadimg()"/>
+                        <button type="button" class="btn btn-success btn-xs" ng-click="chooseimg(1)">我的图片</button>
+                        <!--<select id="myimgs" style="color:black" onchange="changemyimg()"></select>-->
+                    </form>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='iconButtonDivTitle3' accordionmenu-show='true' ng-hide="picHide">
+        <div id="myimgslist" style="width:100%;height:auto;">
+            <li class="ng-scope" ng-repeat="i in img" ng-hide="picPage($index)">
+                <img style="width:70px;height:70px;" src={{i.filepath}}>
+                <p class="btn btn-success btn-xs" ng-click="changeImg(i)">{{i.filename}}</p>
+            </li>
+        </div>
+
+        <li>
+            <div class="row">
+                <button type="button" class="col-md-3 btn btn-primary btn-xs" ng-click="backToMenu()">返回</button>
+                <button type="button" class="col-md-offset-2 btn btn-success btn-xs" ng-click="clickPage('first')">首页</button>
+                <button type="button" class=" btn btn-success btn-xs" ng-click="clickPage('pre')">上一页</button>
+                <button type="button" class=" btn btn-success btn-xs" ng-click="clickPage('next')">下一页</button>
+                <button type="button" class=" btn btn-success btn-xs" ng-click="clickPage('last')">尾页</button>
+            </div>
+
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='iconButtonDiveventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.iconButtonDiveventselect" class="form-control input-sm"
+                            ng-options="x.name for x in iconButtonDivevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addiconButtonDivevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='iconButtonDiveventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editiconButtonDivevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="deliconButtonDivevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>
+<script>
+    function mytest(){
+        var test=$("input[id=fileToUpload]").val();
+        $("input[id=mytextfield]").val(test);
+    }
+</script>

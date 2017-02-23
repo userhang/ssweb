@@ -1,0 +1,629 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='formDivTitleAll' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">搜索框</div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-success btn-xs" ng-click="addSearchInput()">+1</button>
+                    <button  type="button" class="btn btn-warning btn-xs" ng-click="cutSearchInput()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文本框</div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-success btn-xs" ng-click="addTextInput()">+1</button>
+                    <button  type="button" class="btn btn-warning btn-xs" ng-click="cutTextInput()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">密码框</div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-success btn-xs" ng-click="addPasswordInput()">+1</button>
+                    <button  type="button" class="btn btn-warning btn-xs" ng-click="cutPasswordInput()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单选集</div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-success btn-xs" ng-click="addRadioDivInput()">+1</button>
+                    <button  type="button" class="btn btn-warning btn-xs" ng-click="cutRadioDivInput()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">复选集</div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-success btn-xs" ng-click="addCheckBoxDivInput()">+1</button>
+                    <button  type="button" class="btn btn-warning btn-xs" ng-click="cutCheckBoxDivInput()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >method</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.formDivMethodSelected" class="form-control input-sm"
+                            ng-options="x.name for x in formDivMethod"
+                            ng-change="changeFormDivMethod()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">action</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="action"
+                           ng-model="$parent.formDivActionInput"
+                           ng-change="changeFormDivAction()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">表单宽度</div>
+                <div class="col-md-4">
+                    <input class="form-control input-sm"
+                           type="number"
+                           step="0.1"
+                           max="100"
+                           min="0"
+                           placeholder="表单宽度"
+                           ng-model="$parent.formDivWidthInput"
+                           ng-change="changeFormDivWidth()">
+                </div>
+                <div class="col-md-3">
+                    %
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >文本字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.formDivContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in formDivContentFontFamily"
+                            ng-change="changeComponentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.formDivBgColorInput"
+                           ng-change="changeFormDivBgColor()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--搜索框-->
+    <accordionmenu accordionmenu-title='formDivTitleSearchInput' accordionmenu-show='false'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.searchInputNoSelected"
+                            ng-options="x for x in searchInputNo"
+                            ng-change="changeSearchInputItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个搜索框
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.searchInputHasTitleChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeSearchInputHasTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="文本内容"
+                           ng-model="$parent.searchInputTitleContentInput"
+                           ng-change="changeSearchInputTitleContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">按钮内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.searchInputButtonContentInput"
+                           ng-change="changeSearchInputButtonContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">placeholder</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="placeholder"
+                           ng-model="$parent.searchInputPlaceholderContentInput"
+                           ng-change="changeSearchInputPlaceholderContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">name</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="name"
+                           ng-model="$parent.searchInputNameContentInput"
+                           ng-change="changeSearchInputNameContent()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--搜索框事件编辑-->
+    <accordionmenu accordionmenu-title='formDivTitleSearchInputEventBind' accordionmenu-show='false'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.searchInputEventSelect" class="form-control input-sm"
+                            ng-options="x.name for x in eventList">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addEvent('searchInputEventSelect')">新增</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='formDivTitleSearchInputEventEdit' accordionmenu-show='false'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag, 'searchInput')">
+            <div class="row" >
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editEvent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delEvent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--按钮框按钮事件编辑-->
+    <accordionmenu accordionmenu-title='formDivTitleSearchInputButtonEventBind' accordionmenu-show='false'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.searchInputButtonEventSelect" class="form-control input-sm"
+                            ng-options="x.name for x in eventList">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addEvent('searchInputButtonEventSelect')">新增</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='formDivTitleSearchInputButtonEventEdit' accordionmenu-show='false'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag, 'searchInputButton')">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editEvent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delEvent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--文本框-->
+    <accordionmenu accordionmenu-title='formDivTitleTextInput' accordionmenu-show='false'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.textInputNoSelected"
+                            ng-options="x for x in textInputNo"
+                            ng-change="changeTextInputItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个文本框
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.textInputHasTitleChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeTextInputHasTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="文本内容"
+                           ng-model="$parent.textInputTitleContentInput"
+                           ng-change="changeTextInputTitleContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">placeholder</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="placeholder"
+                           ng-model="$parent.textInputPlaceholderContentInput"
+                           ng-change="changeTextInputPlaceholderContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">name</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="name"
+                           ng-model="$parent.textInputNameContentInput"
+                           ng-change="changeTextInputNameContent()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--文本框事件编辑-->
+    <accordionmenu accordionmenu-title='formDivTitleTextInputEventBind' accordionmenu-show='false'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.textInputEventSelect" class="form-control input-sm"
+                            ng-options="x.name for x in eventList">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addEvent('textInputEventSelect')">新增</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='formDivTitleTextInputEventEdit' accordionmenu-show='false'>
+        <li ng-repeat="func in elemEventList.funclist"  ng-show="isShow(func.flag, 'textInput')">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editEvent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delEvent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--密码框-->
+    <accordionmenu accordionmenu-title='formDivTitlePasswordInput' accordionmenu-show='false'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.passwordInputNoSelected"
+                            ng-options="x for x in passwordInputNo"
+                            ng-change="changePasswordInputItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个密码框
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.passwordInputHasTitleChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changePasswordInputHasTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="文本内容"
+                           ng-model="$parent.passwordInputTitleContentInput"
+                           ng-change="changePasswordInputTitleContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">placeholder</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="placeholder"
+                           ng-model="$parent.passwordInputPlaceholderContentInput"
+                           ng-change="changePasswordInputPlaceholderContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">name</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.passwordInputNameContentInput"
+                           ng-change="changePasswordInputNameContent()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--密码框事件-->
+    <accordionmenu accordionmenu-title='formDivTitlePasswordInputEventBind' accordionmenu-show='false'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.passwordInputEventSelect" class="form-control input-sm"
+                            ng-options="x.name for x in eventList">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addEvent('passwordInputEventSelect')">新增</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='formDivTitlePasswordInputEventEdit' accordionmenu-show='false'>
+        <li ng-repeat="func in elemEventList.funclist"  ng-show="isShow(func.flag, 'passwordInput')">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editEvent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delEvent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--单选集-->
+    <accordionmenu accordionmenu-title='formDivTitleRadioInput' accordionmenu-show='false'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.radioDivNoSelected"
+                            ng-options="x for x in radioDivNo"
+                            ng-change="changeRadioDivItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个单选集
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.radioDivHasTitleChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeRadioDivHasTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.radioDivTitleContentInput"
+                           ng-change="changeRadioDivTitleContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">name</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.radioDivNameContentInput"
+                           ng-change="changeRadioDivNameContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单选项</div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-success btn-xs" ng-click="addRadioInput()">+1</button>
+                    <button  type="button" class="btn btn-warning btn-xs" ng-click="cutRadioInput()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.radioNoSelected"
+                            ng-options="x for x in radioNo"
+                            ng-change="changeRadioItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个单选项
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">value</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="value"
+                           ng-model="$parent.radioValueInput"
+                           ng-change="changeRadioValue()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <!--复选集-->
+    <accordionmenu accordionmenu-title='formDivTitleCheckBoxInput' accordionmenu-show='false'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.checkBoxDivNoSelected"
+                            ng-options="x for x in checkBoxDivNo"
+                            ng-change="changeCheckBoxDivItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个复选集
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.checkBoxDivHasTitleChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeCheckBoxDivHasTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.checkBoxDivTitleContentInput"
+                           ng-change="changeCheckBoxDivTitleContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">name</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.checkBoxDivNameContentInput"
+                           ng-change="changeCheckBoxDivNameContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">复选项</div>
+                <div class="col-md-6">
+                    <button  type="button" class="btn btn-success btn-xs" ng-click="addCheckBoxInput()">+1</button>
+                    <button  type="button" class="btn btn-warning btn-xs" ng-click="cutCheckBoxInput()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.checkBoxNoSelected"
+                            ng-options="x for x in checkBoxNo"
+                            ng-change="changeCheckBoxItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个复选项
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">value</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="value"
+                           ng-model="$parent.checkBoxValueInput"
+                           ng-change="changeCheckBoxValue()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

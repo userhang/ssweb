@@ -1,0 +1,487 @@
+<!-- User: DELL -->
+<!--Date: 13-4-8 -->
+<!--Time: 上午8:43 -->
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+
+    <!--下面的视图标签告诉浏览器，使用设备的宽度作为视图宽度并禁止初始的缩放。-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="deps/ssmobile/themes/ssmAnimation.min.css">
+    <link rel="stylesheet" href="deps/ssmobile/themes/theme.min.css">
+    <script src="deps/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="deps/ssmobile/lib/ssmobile.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--外部js文件-->
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ex.js" type="text/javascript" charset="utf-8"></script>
+    <script src="deps/ssmobile/lib/ext/exTheme.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="deps/ssmobile/lib/ext/chartBar.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <!--用户自定义CSS-->
+    <link rel="stylesheet" href="ext.css">
+
+</head>
+<body>
+
+<div id="home">
+    <div class="TOOLBAR">
+        <h1>淞幸Mobile</h1>
+        <a id="about" CLASS="BUTTON" href="#">关于</a>
+    </div>
+
+    <ul CLASS="ROUNDED">
+        <li CLASS="ARROW"><a href="#grid">网格布局</a></li>
+        <li CLASS="ARROW"><a href="#tab">标签布局</a></li>
+        <li CLASS="ARROW"><a href="#tree">树形布局</a></li>
+        <li CLASS="ARROW"><a href="#iscroll">滚动视窗</a></li>
+        <li CLASS="ARROW"><a href="#ui">用户界面</a></li>
+        <li CLASS="ARROW"><a href="#msg">消息提示</a>
+            <small CLASS="COUNTER">4</small>
+        </li>
+        <li CLASS="ARROW"><a href="#chart">实用图表</a>
+            <small CLASS="COUNTER">1</small>
+        </li>
+    </ul>
+
+    <ul CLASS="ROUNDED">
+        <li CLASS="ARROW"><a href="#anim">动画</a>
+            <small CLASS="COUNTER">7</small>
+        </li>
+        <li CLASS="ARROW"><a href="#evt">事件</a>
+            <small CLASS="COUNTER">5</small>
+        </li>
+    </ul>
+
+    <!--<div class="footbar">成都淞幸科技有限公司</div>-->
+</div>
+
+<!--滚动视窗-->
+<div id="iscroll">
+    <div class="TOOLBAR">
+        <h1>滚动视窗</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <div CLASS="SCROLLVIEW" data-settings="{height:'150px',width:'100%'}">
+        <!--放置的内容-->
+
+        <table CLASS="TABLE" width="1000px">
+            <caption>标题</caption>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td>c1</td>
+                <td>c2</td>
+                <td>c3</td>
+            </tr>
+            <tr>
+                <th>21</th>
+                <td>c1</td>
+                <td>c2</td>
+                <td>c3</td>
+            </tr>
+            <tr>
+                <th>31</th>
+                <td>c1</td>
+                <td>c2</td>
+                <td>c3</td>
+            </tr>
+            <tr>
+                <th>41</th>
+                <td>c1</td>
+                <td>c2</td>
+                <td>c3</td>
+            </tr>
+            <tr>
+                <th>51</th>
+                <td>c1</td>
+                <td>c2</td>
+                <td>c3</td>
+            </tr>
+            <tr>
+                <th>61</th>
+                <td>c1</td>
+                <td>c2</td>
+                <td>c3</td>
+            </tr>
+            <tr>
+                <th>71</th>
+                <td>c1</td>
+                <td>c2</td>
+                <td>c3</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<!--网格布局-->
+<div id="grid">
+    <div class="TOOLBAR">
+        <h1>网格布局</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <div CLASS="UI-GRID-B">
+        <div id="fun0" CLASS="UI-BLOCK-A HPOS">淞幸总部</div>
+        <div id="fun1" CLASS="UI-BLOCK-B HPOS">成信高科</div>
+        <div id="fun2" CLASS="UI-BLOCK-C HPOS">项目部</div>
+        <div id="fun3" CLASS="UI-BLOCK-A HPOS">技术部</div>
+        <div id="fun4" CLASS="UI-BLOCK-B HPOS">移动部</div>
+        <div id="fun5" CLASS="UI-BLOCK-C HPOS">行政部</div>
+        <div id="fun6" CLASS="UI-BLOCK-A HPOS">财务部</div>
+    </div>
+</div>
+
+<!--tab布局-->
+<div id="tab">
+    <div class="TOOLBAR">
+        <h1>Tab布局</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <div CLASS="TABVIEW">
+        <ul>
+            <li>集团公司简介</li>
+            <li>集团组成</li>
+        </ul>
+        <div>
+            <div>
+                <div CLASS="INFO">
+                    集团公司始建于2006年，从事软件的自主研发、软硬件系统集成等业务，产品已涉足到机械加工制造、化工、药业、气象等领域。通过多年的努力，公司也已成长为一家以“技术研发为核心，行业性定制开发为主导”的技术型软件企业。
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">成都淞幸责任有限公司</a></li>
+                    <li><a href="#">成都成信高科信息技术有限公司</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--树形布局-->
+<div id="tree">
+    <div class="TOOLBAR">
+        <h1>树形布局</h1>
+        <a href="#" CLASS="BACK">返回</a>
+    </div>
+    <ul CLASS="TREE OPENNING">
+        <li>成都淞幸责任有限公司</li>
+        <li CLASS="TREENODE">
+            <ul CLASS="TREE OPENNING">
+                <li>公司领导</li>
+                <li>总裁：舒红平</li>
+                <li>总经理：刘魁</li>
+            </ul>
+        </li>
+        <li>集团中定位：核心技术研发</li>
+    </ul>
+    <ul CLASS="TREE">
+        <li>成都成信高科信息技术有限公司</li>
+        <li CLASS="TREENODE">
+            <ul CLASS="TREE">
+                <li>公司领导</li>
+                <li>常务副总经理：曹新彬</li>
+            </ul>
+        </li>
+        <li>集团中定位：对外项目服务</li>
+    </ul>
+</div>
+
+<!--用户界面-->
+<div id="ui">
+    <div class="TOOLBAR">
+        <h1>用户界面</h1>
+        <a CLASS="BUTTON" href="#iconbtn">
+            <div CLASS="ICON ICON_HOME"></div>
+            图标按钮</a>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <ul CLASS="ROUNDED">
+        <li CLASS="ARROW"><a href="#edg">通栏列表样式</a></li>
+        <li CLASS="ARROW"><a href="#bigbutton">大按钮</a>
+            <small CLASS="COUNTER">4</small>
+        </li>
+        <li CLASS="FORWARD"><a href="#pan1">面板样式1</a></li>
+        <li CLASS="FORWARD"><a href="#pan2">面板样式2</a></li>
+        <li CLASS="FORWARD"><a href="#headSelect">标题下拉框</a></li>
+        <li CLASS="FORWARD"><a href="#imgSlider">滚动焦点图</a></li>
+        <li CLASS="FORWARD"><a href="#loading">加载中动画</a></li>
+    </ul>
+</div>
+
+<!--通栏式-->
+<div id="edg">
+    <div class="TOOLBAR">
+        <h1>通栏列表样式</h1>
+        <a CLASS="BACK" href="#">back</a>
+    </div>
+    <ul CLASS="EDGETOEDGE">
+        <li CLASS="SEP">淞幸公司领导</li>
+        <li CLASS="ARROW"><a href="#">董事长</a></li>
+        <li CLASS="ARROW"><a href="#">总经理</a></li>
+        <li CLASS="ARROW"><a href="#">技术总监</a></li>
+        <li CLASS="SEP">松幸公司核心部门</li>
+        <li CLASS="FORWARD">技术部</li>
+        <li CLASS="FORWARD">财务部</li>
+        <li CLASS="FORWARD">移动部</li>
+        <li CLASS="FORWARD">行政部</li>
+        <li CLASS="FORWARD">嵌入式部</li>
+    </ul>
+</div>
+
+<!--大按钮-->
+<div id="bigbutton">
+    <div class="TOOLBAR">
+        <h1>大按钮</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <a id="theme1" CLASS="WHITEBUTTON" href="#">白色大按钮</a>
+    <a id="theme2" CLASS="GREENBUTTON" href="#">绿色大按钮</a>
+    <a id="theme3" CLASS="GRAYBUTTON" href="#">灰色大按钮</a>
+    <a id="theme4" CLASS="REDBUTTON" href="#">红色大按钮</a>
+</div>
+
+<!--图标按钮-->
+<div id="iconbtn">
+    <div class="TOOLBAR">
+        <h1>图标按钮</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <div CLASS="UI-GRID-B">
+        <div CLASS="UI-BLOCK-A"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_CORRECT"></div>
+            舒红平</a></div>
+        <div CLASS="UI-BLOCK-B"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_DOWN"></div>
+            刘魁</a></div>
+        <div CLASS="UI-BLOCK-C"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_HOME"></div>
+            罗飞</a></div>
+        <div CLASS="UI-BLOCK-A"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_ADD"></div>
+            曹亮</a></div>
+        <div CLASS="UI-BLOCK-B"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_GEAR"></div>
+            杨镜儒</a></div>
+        <div CLASS="UI-BLOCK-C"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_GRID"></div>
+            肖辉</a></div>
+        <div CLASS="UI-BLOCK-A"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_I"></div>
+            李骥</a></div>
+        <div CLASS="UI-BLOCK-B"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_LEFT"></div>
+            郑皎凌</a></div>
+        <div CLASS="UI-BLOCK-C"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_MULTIPLE"></div>
+            曹新彬</a></div>
+        <div CLASS="UI-BLOCK-A"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_REFRESH"></div>
+            李世斌</a></div>
+        <div CLASS="UI-BLOCK-B"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_RIGHT"></div>
+            文立玉</a></div>
+        <div CLASS="UI-BLOCK-C"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_SEARCH"></div>
+            徐振明</a></div>
+        <div CLASS="UI-BLOCK-A"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_WARN"></div>
+            魏培阳</a></div>
+        <div CLASS="UI-BLOCK-B"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_UP"></div>
+            杜晓宇</a></div>
+        <div CLASS="UI-BLOCK-C"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_TURNRIGHT"></div>
+            赵卓宁</a></div>
+        <div CLASS="UI-BLOCK-A"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_TURNLEFT"></div>
+            胡长焱</a></div>
+        <div CLASS="UI-BLOCK-B"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_SUB"></div>
+            吴高中</a></div>
+        <div CLASS="UI-BLOCK-C"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_STAR"></div>
+            周小芸</a></div>
+        <div CLASS="UI-BLOCK-A"><a CLASS="BUTTON">
+            <div CLASS="ICON ICON_MULTIPLE"></div>
+            彭松涛</a></div>
+    </div>
+</div>
+
+<!--消息提示-->
+<div id="msg">
+    <div class="TOOLBAR">
+        <h1>消息提示</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <ul></ul>
+    <a CLASS="BUTTON" id="popmsg">气泡消息</a>
+    <a CLASS="BUTTON" id="hintmsg">提示框</a>
+    <a CLASS="BUTTON" id="processbarmsg">进度条框</a>
+    <a CLASS="BUTTON" id="popOver-right">浮动提示框 to right</a>
+    <a CLASS="BUTTON" id="popOver-left">浮动提示框 to left</a>
+    <a CLASS="BUTTON" id="popOver-top">浮动提示框 to top</a>
+    <a CLASS="BUTTON" id="popOver-bottom">浮动提示框 to bottom</a>
+    <div CLASS="FUNPANEL">
+        <div CLASS="TITLE">功能面板</div>
+        在此处可以添加任意内容...
+    </div>
+</div>
+
+<!--实用图表-->
+<div id="chart">
+    <div class="TOOLBAR">
+        <h1>实用图表</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <ul CLASS="ROUNDED">
+        <li CLASS="ARROW"><a href="#chartBar">柱形图</a></li>
+    </ul>
+</div>
+
+
+<!--面板样式1-->
+<div id="pan1">
+    <div class="TOOLBAR">
+        <h1>面板样式1</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <ul CLASS="PLASTIC" id="listtest">
+    </ul>
+    <div class="FOOTBAR">
+        <div>
+            <span style="margin-right:20px"><a  href="#"  id="lastPage" >上一页</a></span>
+            <span id="currentPage" style="margin-right:20px"></span>
+            <span ><a  href="#" id="nextPage">下一页</a></span>
+            <!--<span >&nbsp;&nbsp;&nbsp;&nbsp;跳到<input type="text" id="jumpTo" style="width:5%"/>页</span>-->
+        </div>
+    </div>
+</div>
+<!--面板样式2-->
+<div id="pan2">
+    <div class="TOOLBAR">
+        <h1>面板样式2</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <ul CLASS="METAL">
+        <li CLASS="ARROW"><a href="#">
+            <small>AM</small>
+            9:40 <em>需求分析</em></a></li>
+        <li CLASS="ARROW"><a href="#">
+            <small>PM</small>
+            19:40 <em>总体设计</em></a></li>
+        <li CLASS="ARROW"><a href="#">
+            <small>PM</small>
+            22:40 <em>详细设计</em></a></li>
+        <li CLASS="ARROW"><a href="#">
+            <small>PM</small>
+            11:40 <em>完成代码编写</em></a></li>
+        <li CLASS="ARROW"><a href="#">
+            <small>PM</small>
+            9:40 <em>测试</em></a></li>
+    </ul>
+</div>
+
+
+<!--动画-->
+<div id="anim">
+    <div class="TOOLBAR">
+        <h1>页面动画</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <ul>
+        <li><a CLASS="SLIDELEFT" href="#animtest">slideleft</a></li>
+        <li><a CLASS="SLIDEUP" href="#animtest">slideup</a></li>
+        <li><a CLASS="FADE" href="#animtest">fade</a></li>
+        <li><a CLASS="FLIPLEFT" href="#animtest">flip</a></li>
+        <li><a CLASS="POP" href="#animtest">pop</a></li>
+        <li><a CLASS="SWITCH" href="#animtest">switch</a></li>
+        <li><a CLASS="ROTATE" href="#animtest">rotate</a></li>
+    </ul>
+</div>
+
+<!--标题下拉框-->
+<div id="headSelect">
+    <div CLASS="TOOLBAR">
+        <div CLASS="HEADSELECT" id="homeTitle">
+            <h1>标题</h1>
+            <ul>
+                <li><a href="#">theme</a></li>
+                <li><a href="#">blue</a></li>
+                <li><a href="#">lightBlue</a></li>
+                <li><a href="#">treeGreen</a></li>
+            </ul>
+        </div>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <p>请点击返回...</p>
+</div>
+
+<!--滚动焦点图-->
+<div id="imgSlider">
+    <div CLASS="TOOLBAR">
+        <h1>滚动焦点图</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <!--data-settings="{interval:'2000',preNextBtn:'true',height:'200px'}"-->
+    <div CLASS="FOCUS" >
+        <ul>
+            <li><a href="#"><img src="img/pic_1.jpg"/></a></li>
+            <li><a href="#"><img src="img/pic_2.png"/></a></li>
+            <li><a href="#"><img src="img/pic_3.png"/></a></li>
+            <li><a href="#"><img src="img/pic_4.jpg"/></a></li>
+        </ul>
+    </div>
+</div>
+
+<!--加载中动画-->
+<div id="loading">
+    <div CLASS="TOOLBAR">
+        <h1>加载中动画</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <a CLASS="BUTTON" id="loadstart">加载开始</a>
+    <a CLASS="BUTTON" id="loadend">加载结束</a>
+    <a CLASS="BUTTON" id="loadstart_disableScreen">加载开始_屏蔽屏幕</a>
+</div>
+
+<!--柱形图-->
+<div id="chartBar">
+    <div CLASS="TOOLBAR">
+        <h1>柱形图</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <div>
+        <div id="chart2">
+        </div>
+    </div>
+</div>
+
+
+<!--动画测试页面-->
+<div id="animtest">
+    <div class="TOOLBAR">
+        <h1>动画测试</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <p>请点击返回...</p>
+</div>
+
+<!--事件-->
+<div id="evt">
+    <div class="TOOLBAR">
+        <h1>事件</h1>
+        <a CLASS="BACK" href="#">返回</a>
+    </div>
+    <div id="dir"></div>
+</div>
+</body>
+</html>

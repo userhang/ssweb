@@ -1,0 +1,38 @@
+/*dragplaceholder*/
+.moving
+{
+	height: 2em;
+	width: 95%;
+	background: ghostwhite;
+	opacity: 0.3;
+	border-radius: 8px;
+}
+
+.selected
+{
+	border: dashed 1px red;
+	box-shadow: 5px 5px 5px #d5d5d5;
+	position: relative;
+    overflow: hidden;
+}
+
+
+.ICON_DELETE
+{
+	position: absolute;
+	top:-3px;
+	right:0px;
+	float: right;
+	margin-top: 2px;
+	margin-right: 3px;
+	width: 10px;
+	height: 14px;
+	background-image: url(../img/icons-18-black.png);
+	background-repeat: no-repeat;
+	background-position: -76px 0;
+	z-index: 200;
+}
+.ICON_DELETE:active,.ICON_DELETE:hover
+{
+	background-image: url(../img/icons-18-white.png);
+}

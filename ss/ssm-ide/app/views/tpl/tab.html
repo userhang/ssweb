@@ -1,0 +1,66 @@
+<div ng-model="no" class="linarrow">
+    <accordionmenu accordionmenu-title='TabTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标签项个数</div>
+                <div class="col-md-6">
+                    <button id="addtabli" type="button" class="btn btn-success btn-xs" ng-click="addtabli()">+1</button>
+                    <button id="cuttabli" type="button" class="btn btn-warning btn-xs" ng-click="cuttabli()">-1</button>
+                </div>
+            </div>
+        </li>
+        <!--<li>-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-4 col-md-offset-1 textAlignAtRight" >-->
+                    <!--<span >滚动视窗</span>-->
+                <!--</div>-->
+                <!--<div class="col-md-6">-->
+                    <!--<input type="checkbox"-->
+                           <!--ng-model='$parent.isWrapdivChecked'-->
+                           <!--ng-true-value="yes" ng-false-value="no"-->
+                           <!--ng-change="changeIsWrapDivCorner()">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.tabItemNoSelected"
+                            ng-options="x for x in tabItemNo"
+                            ng-change="changeTabItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个标签项
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标签内容"
+                           ng-model="$parent.tabItemContentInput"
+                           ng-change="changeTabItemContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6 bigField">
+                    <textarea class="form-control input-sm"
+                           placeholder="文字内容"
+                           ng-model="$parent.tabContentInput"
+                           ng-change="changeTabContent()">
+                    </textarea>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

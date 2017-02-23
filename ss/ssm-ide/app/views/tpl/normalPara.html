@@ -1,0 +1,91 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='nparaTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+                 
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopynormalPara"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.normalParaidInput"
+                           ng-change="changeButtonContent()">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopynormalPara')">复制</button>
+                </div>
+                 
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">段落文字</div>
+                <div class="col-md-6 bigField">
+                    <textarea class="form-control input-sm"
+                           placeholder="段落文字"
+                           ng-model="$parent.normalParaContentInput"
+                           ng-change="changeNormalParaContent()">
+                    </textarea>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >文字字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.normalParaContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeNormalParaContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">段落高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="高度"
+                           ng-model="$parent.normalParaHeightInput"
+                           ng-change="changeNormalParaHeight()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+     <accordionmenu accordionmenu-title='nparaeventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.normalParaeventselect" class="form-control input-sm"
+                            ng-options="x.name for x in normalParaevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addnormalParaevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='nparaeventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editnormalParaevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delnormalParaevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

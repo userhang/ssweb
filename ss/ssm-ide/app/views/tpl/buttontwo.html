@@ -1,0 +1,125 @@
+<div ng-model="no" class="linarrow">
+    <accordionmenu accordionmenu-title='buttontwoTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.buttonContentInput"
+                           ng-change="changeButtonContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >文字字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.buttonContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeButtonContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变按钮链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.buttonHrefContentInput"
+                           ng-change="changeButtonHrefContent()">
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.buttonColorInput"
+                           ng-change="changeButtonColor()">
+                    <datalist class="colors">
+                    </datalist>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.buttonBgColorInput"
+                           ng-change="changeButtonBgColor()">
+                </div>
+            </div>
+        </li>
+        <!--<li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变按钮链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.buttonHrefContentInput"
+                           ng-change="changeButtonHrefContent()">
+                </div>
+            </div>
+        </li>-->
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >转场动画</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.switchPageTypeSelected" class="form-control input-sm"
+                            ng-options="x.name for x in switchPageType"
+                            ng-change="changeSwitchPageType()">
+                    </select>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='buttoneventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.buttoneventselect" class="form-control input-sm"
+                            ng-options="x.name for x in buttonevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addbuttonevent()">新增</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='buttoneventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editbuttonevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delbuttonevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

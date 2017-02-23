@@ -1,0 +1,250 @@
+/* Content Flip Style */
+.bb-bookblock {
+	width: 600px;
+	height: 400px;
+	position: relative;
+	background: #fff;
+	z-index: 100;
+}
+
+.bb-page {
+	width: 50%;
+	height: 100%;
+	left: 50%;
+	position: absolute;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+}
+
+.bb-page > div,
+.bb-outer,
+.bb-content {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.bb-content {
+	background: #fff;
+}
+
+.bb-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.bb-overlay, .bb-outer {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.bb-page > div {
+	width: 100%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.bb-back {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+.bb-outer {
+	width: 100%;
+	overflow: hidden;
+	z-index: 999;
+}
+
+.bb-overlay, 
+.bb-flipoverlay {
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.bb-flipoverlay {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bb-bookblock > div.bb-page:first-child,
+.bb-bookblock > div.bb-page:first-child .bb-back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.bb-item {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	background: #fff;
+}
+
+.bigField
+{
+    height:120px;
+}
+
+#warningDiv{
+    position: absolute;
+    left:575px;
+    top:10px;
+    width:200px;
+    height:200px;
+    background-color: #C3EAF3;
+    z-index:3;
+    opacity: 0;
+}
+
+#warningTitle{
+    width:100%;
+    height:30px;
+    display: block;
+    background-color: #0d77b6;
+    text-align: center;
+    line-height: 30px;
+    color:#fff;
+}
+
+#warningContent{
+    width: 100%;
+    height:170px;
+    padding: 5px;
+}
+
+#warningSpan{
+    display: block;
+    height: 120px;
+}
+#warningButton{
+    width: 50%;
+    margin-left: 25%;
+}
+
+#showCtrlDiv{
+    display: block;
+    position: absolute;
+    left: -450px;
+    top:10px;
+    width: 180px;
+    height:420px;
+    z-index: 3;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+#showCtrlTitle{
+    background-color: #0d77b6;
+    margin: 0px;
+    height:70px;
+    cursor: pointer;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+}
+
+#showCtrlContent{
+    height:375px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #78D0E4;
+}
+
+.showCtrlLi{
+    height:100px;
+    padding:0px;
+    border-bottom: 1px solid #65A8C9;
+}
+
+.showCtrlSmallTitle{
+    height:40px;
+    padding:5px;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.showCtrlSmallInput{
+    height: 60px;
+    padding-left: 5px;
+    margin-right: 5px;
+}
+
+.showCtrlInput{
+    width:80%;
+    height:50%;
+    border-radius: 5px;
+    margin-top: 0px;
+    padding-left: 5px;
+    color: #000;
+}
+
+.showCtrlSpan{
+    margin-left: 5px;
+}
+
+#showCtrlButtons{
+    padding-left:7px;
+    padding-right: 7px;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    height:125px;
+}
+
+#se_ic_view137{
+    top:0px;
+}
+
+.showCtrlFlag{
+    height:70px;
+}
+
+#showCtrlIsRealInput{
+    width:15px;
+    height:15px;
+}
+
+#showCtrlChenckbox{
+    height:50px;
+    line-height: 50px;
+    padding-left: 5px;
+}
+
+
+

@@ -1,0 +1,162 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='zxtTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">刷新柱形图</div>
+                <div class="col-md-6">
+                    <button id="addtabli" type="button" class="btn btn-success btn-xs" ng-click="refzhuxingtu()">刷新</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="Copyzhuxingtu"
+                           type="text"
+                           placeholder="按钮内容"
+                           value="chart2"
+                    >
+
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('Copyzhuxingtu')">复制</button>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.zhuxingtuTitleInput"
+                           ng-change="changeZhuxingtuTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >柱形条数量</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.zhuxingtuItemSumSelected" class="form-control input-sm"
+                            ng-options="x.name for x in zhuxingtuItemSum"
+                            ng-change="changeZhuxingtuItemSum()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">列宽</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="列宽"
+                           ng-model="$parent.zhuxingtuWidthInput"
+                           ng-change="changeZhuxingtuWidth()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">行标</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="行标"
+                           ng-model="$parent.zhuxingtuXaisInput"
+                           ng-change="changeZhuxingtuXais()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">列标</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="列标"
+                           ng-model="$parent.zhuxingtuYaisInput"
+                           ng-change="changeZhuxingtuYais()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='zxtItemTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >选择一列来设置</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.zhuxingtuItemNoSelected" class="form-control input-sm"
+                            ng-options="x.name for x in zhuxingtuItemNo"
+                            ng-change="changeZhuxingtuItemNo()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">该列的名称</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="该列的名称"
+                           ng-model="$parent.zhuxingtuItemNameInput"
+                           ng-change="changeZhuxingtuItemName()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">该列的数量</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="该列的数量"
+                           ng-model="$parent.zhuxingtuItemValueInput"
+                           ng-change="changeZhuxingtuItemValue()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='zhuxingtueventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.zhuxingtueventselect" class="form-control input-sm"
+                            ng-options="x.name for x in zhuxingtuevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addzhuxingtuevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='zhuxingtueventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editzhuxingtuevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delzhuxingtuevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

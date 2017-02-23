@@ -1,0 +1,167 @@
+<style type="text/css">
+    .file-box{ position:relative;width:340px;}
+    .txt{ height:22px; border:1px solid #cdcdcd; width:180px;color: #000000}
+    .mybtn{ background-color:#FFF; border:1px solid #CDCDCD;height:24px; width:70px;}
+    .file{ position:absolute; top:30px; right:170px; height:24px; filter:alpha(opacity:0);opacity: 0;width:10px }
+</style>
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='textphotoShowTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopytextphotoShow"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.textphotoShowidInput">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopytextphotoShow')">复制</button>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">段落文字</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="段落文字"
+                           ng-model="$parent.textphotoShowContentInput"
+                           ng-change="changeTextPhotoShowContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >文字字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.textphotoShowFontSelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeTextPhotoShowFont()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">字体大小</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="文字大小"
+                           ng-model="$parent.textphotoShowFontWeightInput"
+                           ng-change="changeTextPhotoShowFontWeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="高度"
+                           ng-model="$parent.textphotoShowHeightInput"
+                           ng-change="changeTextPhotoShowHeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">图片比例</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           step="0.01"
+                           min="0"
+                           max="1"
+                           placeholder="图片比例"
+                           ng-model="$parent.textphotoShowRatioInput"
+                           ng-change="changeTextPhotoShowRatio()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">列表项个数</div>
+                <div class="col-md-6">
+                    <button id="changeTextPhotoPosition" type="button" class="btn btn-success btn-xs" ng-click="changeTextPhotoPosition()">图片文本对调</button>
+                </div>
+            </div>
+        </li>
+        <!--<li class="file-box">-->
+        <!--<form method="post"   enctype="multipart/form-data">-->
+        <!--<input type='button' class='btn btn-success btn-xs' value='浏览...' />-->
+        <!--<input type='text' name='textfield' id='mytextfield' class='txt'/>-->
+        <!--<input type="file" name="upfile" id="fileToUpload" class="file" onchange="mytest()"/>-->
+        <!--<br><input type="submit" value="上传图片" class="btn btn-success btn-xs" ng-click="uploadimg()"/>-->
+        <!--<button type="button" class="btn btn-success btn-xs" ng-click="chooseimg()">我的图片</button>-->
+        <!--&lt;!&ndash;<select id="myimgs" style="color:black" onchange="changemyimg()"></select>&ndash;&gt;-->
+        <!--</form>-->
+        <!--</li>-->
+        <li class="file-box">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">选择图片</div>
+                <div class="col-md-6">
+                    <form method="post"   enctype="multipart/form-data">
+                        <input type='text' name='textfield' class="form-control input-sm" id='mytextfield' class='txt'/>
+                        <input type='button' class='btn btn-success btn-xs' value='浏览图片' />
+                        <input type='reset' class='btn btn-success btn-xs' value='取消选择' />
+                        <input type="file" name="upfile" id="fileToUpload" class="file" onchange="mytest()"/>
+                        <br><input type="submit" value="上传图片" class="btn btn-success btn-xs" ng-click="uploadimg()"/>
+                        <button type="button" class="btn btn-success btn-xs" ng-click="chooseimg()">我的图片</button>
+                        <!--<select id="myimgs" style="color:black" onchange="changemyimg()"></select>-->
+                    </form>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='textphotoShoweventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.textphotoShoweventselect" class="form-control input-sm"
+                            ng-options="x.name for x in textphotoShowevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addtextphotoShowevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='textphotoShoweventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="edittextphotoShowevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="deltextphotoShowevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <div id="myimgslist" style="width:100%;height:auto;">
+
+    </div>
+</div>
+<script>
+    function mytest(){
+        var test=$("input[id=fileToUpload]").val();2
+        $("input[id=mytextfield]").val(test);
+    }
+</script>

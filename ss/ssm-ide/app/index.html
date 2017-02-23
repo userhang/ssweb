@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-cn"  ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>editor</title>
+    <link rel="icon" href="styles/icon/pen.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="styles/icon/pen.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/parent/parentMain.css">
+    <link rel="stylesheet" href="styles/parent/component.css">
+    <link rel="stylesheet" href="styles/parent/style.css">
+    <link rel="stylesheet" href="styles/parent/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="styles/parent/phone.css"/>
+    <link rel="stylesheet" href="styles/parent/icon.css"/>
+
+
+
+</head>
+
+<body class="cbp-spmenu-push">
+
+<div ng-controller="navCtrl">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" id="logo" href="http://210.41.225.116:8080/ssMobile-mainpage/" target="_blank"><img class="logo-img" src="./ires/deps/ssmobile/themes/img/logo.png">ssMobile-editor</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" ng-init="edit_navActive=true">
+                <li ng-class="{active:edit_navActive}"><a href="" ng-click="edit()">编辑</a></li>
+                <li ng-class="{active:preview_navActive}"><a href="" ng-click="preview()">预览</a></li>
+                <li ng-class="{active:download_navActive}"><a href="" ng-click="download()">下载</a></li>
+                <li ng-class="{active:save_navActive}"><a href="" ng-click="saveData()">存储</a></li>
+                <li><a href="http://210.41.225.116:8080/ssMobile-mainpage/Docindex.html" target="_blank">说明文档</a></li>
+                <li><a href="http://210.41.225.116:3000" target="_blank">另建新html页面</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-init="notlogin=true" style="padding:0 30px 0 0">
+                <li ng-show="notlogin">
+                    <!-- 这里直接是失效，不论移到哪里，都是失效的 -->
+                    <a href=""  data-toggle="modal" data-target="#login" >登录</a>
+                </li>
+                <li ng-show="notlogin">
+                    <a href="" data-toggle="modal" data-target="#register">注册</a>
+                </li>
+                <li ng-hide="notlogin">
+                    <a href="" data-toggle="modal" data-target="#changepassword" ng-bind="user.username">
+                    </a>
+                </li>
+                <li ng-hide="notlogin">
+                    <a href="" ng-click="checkMyHistoryVersion()">
+                        历史版本
+                    </a>
+                </li>
+                <li ng-show="manageUser" ng-init="manageUser=false">
+                    <a href="" ng-click="manageAllUserData()">
+                        用户管理
+                    </a>
+                </li>
+                <li ng-hide="notlogin">
+                    <a href="" ng-click="logout()">注销</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--提示框-->
+    <div id="warningDiv">
+        <div id="warningTitle">
+            <strong>
+                提示框标题
+            </strong>
+        </div>
+        <div id="warningContent" >
+            <span id="warningSpan">提示框内容</span>
+            <button type="button" id="warningButton" class="btn btn-primary btn-block btn-sm" ng-click="warningButtonHide()">确定(5)</button>
+        </div>
+
+    </div>
+    <div id="eventCtrlDiv" style="display: none;" ng-click="eventCtrlDivClick()"></div>
+
+    <!--修改预览页面控制表单-->
+    <div id="showCtrlDiv">
+        <h3 id="showCtrlTitle" ng-click="toggleShowCtrl()">屏幕设置</h3>
+        <ul id="showCtrlContent">
+            <li class="showCtrlLi">
+                <div class="showCtrlSmallTitle">
+                    高度
+
+                </div>
+                <div class="showCtrlSmallInput">
+                    <input type="number"
+                           class="showCtrlInput"
+                           id="showCtrlHeightInput"
+                            min="200"/>
+                    <span class="showCtrlSpan">px</span>
+                     <p>5英寸约等于600px</p>
+                </div>
+            </li>
+            <li class="showCtrlLi">
+                <div class="showCtrlSmallTitle">
+                    宽度
+                </div>
+                <div class="showCtrlSmallInput">
+                   <input type="number"
+                          class="showCtrlInput"
+                          id="showCtrlWidthInput"
+                          min="200"/>
+                    <span class="showCtrlSpan">px</span>
+                </div>
+            </li>
+            <li class="showCtrlLi" id="showCtrlChenckbox">
+                <div class="showCtrlSmallInput">
+                    智能缩放
+                    <input type="checkbox"
+                           class="showCtrlInput"
+                           id="showCtrlIsRealInput"/>
+                </div>
+            </li>
+            <li class="showCtrlLi" id="showCtrlButtons">
+                <button type="button" class="btn btn-warning btn-block btn-sm" ng-click="showCtrlReset()">恢复默认值</button>
+                <button type="button" class="btn btn-primary btn-block btn-sm" ng-click="showCtrlSubmit()">预览</button>
+                <a  class="btn btn-primary btn-block btn-sm" ng-click="showCtrlFullScreen()">全屏预览</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <!-- changepasswordmodal -->
+    <div class="modal fade" id="changepassword" tabindex="-1" role="dialog" aria-labelledby="changepasswordLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 20%">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="changepasswordLabel">修改密码</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal" ng-init="changepasswordsuccess=true">
+                        <div class="form-group">
+                            <label for="changepasswordusername" class="col-sm-4 control-label">用&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="User name"
+                                       id="changepasswordusername"
+                                       ng-model='user.username'
+                                       ng-disabled="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="changepasswordpassword" class="col-sm-4 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                            <div class="col-sm-8">
+                                <input type="password"
+                                       class="form-control"
+                                       id="changepasswordpassword"
+                                       placeholder="Password"
+                                       ng-model='changepasswordPassword'
+                                       ng-blur="checkRegisterPassword()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="changepasswordPasswordRepeat" class="col-sm-4 control-label">确认密码</label>
+                            <div class="col-sm-8">
+                                <input type="password"
+                                       class="form-control"
+                                       id="changepasswordPasswordRepeat"
+                                       placeholder="Confirm Password"
+                                       ng-model='changepasswordPasswordRepeat'
+                                       ng-blur="checkRegisterinputPasswordRepeat()">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 30px">
+                            <div class="col-md-6">
+                                <button type="submit"
+                                        class="btn btn-primary btn-block btn-lg"
+                                        ng-click="changepassword()">
+                                    确定修改
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button"
+                                        class="btn btn-default btn-block btn-lg" href="#"
+                                        data-dismiss="modal"
+                                        aria-hidden="true">
+                                    取&nbsp;&nbsp;&nbsp;&nbsp;消
+                                </button>
+                            </div>
+                        </div>
+                        <div ng-class="{disable:changepasswordsuccess}" ng-bind="changepasswordfaildinfo">
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- loginModal -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 20%">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="loginLabel" >用户登录</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="loginUsername" class="col-sm-3 control-label">用户名</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="User name"
+                                       id="loginUsername"
+                                       ng-model='loginUsername'
+                                       ng-blur="checkLoginUsername()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword" class="col-sm-3 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                            <div class="col-sm-9">
+                                <input type="password"
+                                       class="form-control"
+                                       id="loginPassword"
+                                       placeholder="Password"
+                                       ng-model='loginPassword'
+                                       ng-blur="checkLoginPassword()">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 30px">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary btn-block btn-lg" ng-click="login()">
+                                    登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button"
+                                        class="btn btn-default btn-block btn-lg" href="#"
+                                        data-toggle="modal"
+                                        data-target="#register"
+                                        data-dismiss="modal">
+                                    马上注册
+                                </button>
+                            </div>
+                        </div>
+                        <div ng-class="{disable:loginsuccess}" ng-bind="loginfaildinfo">
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- registerModal -->
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="registerLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="registerLabel">新用户注册</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal" ng-init="registersuccess=true">
+                        <div class="form-group">
+                            <label for="registerinputText" class="col-sm-4 control-label">用&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
+                            <div class="col-sm-8">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="User name"
+                                       id="registerinputText"
+                                       ng-model='registerUsername'
+                                       ng-blur="checkRegisterUsername()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword" class="col-sm-4 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                            <div class="col-sm-8">
+                                <input type="password"
+                                       class="form-control"
+                                       id="registerPassword"
+                                       placeholder="Password"
+                                       ng-model='registerPassword'
+                                       ng-blur="checkRegisterPassword()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerinputPasswordRepeat" class="col-sm-4 control-label">确认密码</label>
+                            <div class="col-sm-8">
+                                <input type="password"
+                                       class="form-control"
+                                       id="registerinputPasswordRepeat"
+                                       placeholder="Confirm Password"
+                                       ng-model='registerinputPasswordRepeat'
+                                        ng-blur="checkRegisterinputPasswordRepeat()">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 30px">
+                            <div class="col-md-6">
+                                <button type="submit"
+                                        class="btn btn-primary btn-block btn-lg"
+                                        ng-click="register()">
+                                    注&nbsp;&nbsp;&nbsp;&nbsp;册
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button"
+                                        class="btn btn-default btn-block btn-lg" href="#"
+                                        data-toggle="modal"
+                                        data-target="#login"
+                                        data-dismiss="modal">
+                                    返回登录
+                                </button>
+                            </div>
+                        </div>
+                        <div ng-class="{disable:registersuccess}" ng-bind="registerfaildinfo">
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- saveModal -->
+    <div class="modal fade" id="save" tabindex="-1" role="dialog" aria-labelledby="saveLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="saveLabel">填写存储信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal" ng-init="savesuccess=true">
+                        <div class="form-group">
+                            <label for="saveVersion" class="col-sm-2 control-label">版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本</label>
+                            <div class="col-sm-10">
+                                <input type="number"
+                                       class="form-control"
+                                       placeholder="1"
+                                       id="saveVersion"
+                                       ng-init="saveVersion=1"
+                                       ng-model='saveVersion'
+                                       ng-blur="checkSaveVersion()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="saveDescribe" class="col-sm-2 control-label">描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control"
+                                          rows="3"
+                                          id="saveDescribe"
+                                          placeholder="请填写一些关于当前要存储的版本的描述信息"
+                                          ng-model='saveDescribe'></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="saveComments" class="col-sm-2 control-label">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control"
+                                          rows="3"
+                                          id="saveComments"
+                                          placeholder="如果有需要的话，填写一些备注信息"
+                                          ng-model='saveComments'></textarea>
+                            </div>
+                        </div>
+                        <button type="button"
+                                class="btn btn-primary btn-block btn-lg"
+                                ng-click="save()">
+                            存&nbsp;&nbsp;&nbsp;&nbsp;储
+                        </button>
+                        <div ng-class="{disable:savesuccess}" ng-bind="savefaildinfo">
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- myHistoryVersionModal -->
+    <div class="modal fade" id="myHistoryVersion" tabindex="-1" role="dialog" aria-labelledby="historyVersionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="historyVersionLabel">我的历史版本</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal" ng-init="savesuccess=true">
+                        <div ng-repeat="thisversion in user.historyVersion" class="dialogblock">
+                            <div class="form-group">
+                                <label for="saveVersion" class="col-sm-2 control-label">版&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本</label>
+                                <div class="col-sm-10">
+                                    <input type="text"
+                                           class="form-control"
+                                           ng-model='thisversion.version'
+                                           ng-disabled="true">
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="saveVersion" class="col-sm-2 control-label">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间</label>
+                                <div class="col-sm-10">
+                                    <input type="text"
+                                           class="form-control"
+                                           ng-model='thisversion.time'
+                                           ng-disabled="true">
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="saveDescribe" class="col-sm-2 control-label">描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control"
+                                              rows="3"
+                                              ng-model='thisversion.describe'
+                                              ng-disabled="true"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="saveComments" class="col-sm-2 control-label">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control"
+                                              rows="3"
+                                              placeholder="如果有需要的话，填写一些备注信息"
+                                              ng-model='thisversion.comments'
+                                              ng-disabled="true"></textarea>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 30px">
+                                <div class="col-md-4">
+                                    <button type="button"
+                                            class="btn btn-primary btn-block"
+                                            ng-click="historyVersionLoadin(thisversion.project)">
+                                        载&nbsp;&nbsp;&nbsp;&nbsp;入
+                                    </button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button"
+                                            class="btn btn-success btn-block"
+                                            ng-click="historyVersionCover(thisversion)">
+                                        覆&nbsp;&nbsp;&nbsp;&nbsp;盖
+                                    </button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button"
+                                            class="btn btn-warning btn-block"
+                                            ng-click="historyVersionDel(thisversion)">
+                                        删&nbsp;&nbsp;&nbsp;&nbsp;除
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- manageUserModal -->
+    <div class="modal fade" id="manageUser" tabindex="-1" role="dialog" aria-labelledby="manageUserLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="manageUserLabel">用户信息管理</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal" ng-init="savesuccess=true">
+                        <div ng-repeat="thisUser in allUser" class="dialogblock">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">用&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名</label>
+                                <div class="col-sm-9">
+                                    <input type="text"
+                                           class="form-control"
+                                           ng-model='thisUser.username'
+                                           ng-disabled="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">用&nbsp;户&nbsp;密&nbsp;码</label>
+                                <div class="col-sm-9">
+                                    <input type="password"
+                                           class="form-control"
+                                           ng-model='thisUser.password'
+                                           ng-disabled="false">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">注&nbsp;册&nbsp;时&nbsp;间</label>
+                                <div class="col-sm-9">
+                                    <input type="text"
+                                           class="form-control"
+                                           ng-model='thisUser.register_time'
+                                           ng-disabled="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">存&nbsp;储&nbsp;上&nbsp;限</label>
+                                <div class="col-sm-9">
+                                    <input type="number"
+                                           class="form-control"
+                                           ng-model='thisUser.limit'
+                                           ng-disabled="false">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">注&nbsp;册&nbsp;确&nbsp;认</label>
+                                <div class="col-sm-3">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="thisUser.register_confirm">
+                                        </label>
+                                    </div>
+                                </div>
+                                <label class="col-sm-3 control-label">管&nbsp;&nbsp;&nbsp;理&nbsp;&nbsp;&nbsp;员</label>
+                                <div class="col-sm-3">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="thisUser.admin">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 30px">
+                                <div class="col-md-6">
+                                    <button type="button"
+                                            class="btn btn-primary btn-block"
+                                            ng-click="manageUserSaveChange(thisUser)">
+                                        保存修改
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button"
+                                            class="btn btn-warning btn-block"
+                                            ng-click="manageUserDelUser(thisUser)">
+                                        删除用户
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
+
+<div id="content">
+    <div class="menu ui" id="uimenu" >
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left uimenu " id="cbp-spmenu-s1" ng-controller="uiselect">
+            <div id="showuipane" ng-showuipane>
+               组件
+            </div>
+            <div class="uimenuselectbox" >
+                <div class="uimenuselect uimenutheme " ng-class="{uimenuactive:themeislive}" ng-click="tabtoggle_theme()" ng-init="themeislive=false">
+                    Theme
+                </div>
+                <div class="uimenuselect uimenucss " ng-class="{uimenuactive:cssislive}" ng-click="tabtoggle_css()" ng-init="cssislive=true">
+                    CSS
+                </div>
+            </div>
+
+            <div class="uipane uilist" ng-controller="uiListCtrl">
+                <div class=" uipanecontent uipanetheme" ng-show="tab_theme">
+                    <li  id="{{theme.name}}"  ng-repeat="theme in themes" onclick="sendMessage_changetheme(event,'mainIframe','changeTheme')">
+                        <span id="{{theme.name}}">{{theme.comment}}</span>
+                    </li>
+                </div>
+                <div class="uipanecontent uipanecss" ng-hide="tab_css">
+                    <accordionmenu accordionmenu-title='layoutTitle' accordionmenu-show='true'>
+                        <div class="row">
+                            <div class="col-md-6" ng-repeat="csselem_layout in csselem_layouts" ng-class="{'uipanecontenthide':($index%2)}">               
+                                <span id="{{csselem_layout.show.id}}" draggable="true" ondragstart="drag(event)">
+                                    <i class="{{csselem_layout.show.id}}" ng-bind-html="csselem_layout.show.icon"></i>
+                                    {{csselem_layout.show.comment}}
+                                 </span>
+                            </div>
+                        </div>
+                    </accordionmenu>
+                    <accordionmenu accordionmenu-title='HtmlComponentTitle' accordionmenu-show='true'>
+                        <li ng-repeat="csselem_htmlcomponent in csselem_htmlcomponents">
+                            <span id="{{csselem_htmlcomponent.show.id}}" draggable="true" ondragstart="drag(event)">
+                                {{csselem_htmlcomponent.show.comment}}
+                            </span>
+                        </li>
+                    </accordionmenu>
+                    <accordionmenu accordionmenu-title='containerTitle' accordionmenu-show='true'>
+                        <li ng-repeat="csselem_container in csselem_containers">
+                            <span id="{{csselem_container.show.id}}" draggable="true" ondragstart="drag(event)">
+                                {{csselem_container.show.comment}}
+                            </span>
+                        </li>
+                    </accordionmenu>
+                    <accordionmenu accordionmenu-title='componentTitle' accordionmenu-show='false'>
+                        <li ng-repeat="csselem_component in csselem_components">
+                            <span id="{{csselem_component.show.id}}" draggable="true" ondragstart="drag(event)">
+                                {{csselem_component.show.comment}}
+                            </span>
+                        </li>
+                        <!--<div class="row">-->
+                            <!--<div class="col-md-6" ng-repeat="csselem_component in csselem_components" ng-class="{'uipanecontenthide':($index%2)}">-->
+                                <!--<span id="{{csselem_component.show.id}}" draggable="true" ondragstart="drag(event)">-->
+                                    <!--<!--<i class="{{csselem_component.show.id}}" ng-bind-html="csselem_component.show.icon"></i>-->-->
+                                    <!--{{csselem_component.show.comment}}-->
+                                 <!--</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </accordionmenu>
+                    <accordionmenu accordionmenu-title='mutualTitle' accordionmenu-show='false'>
+                        <li ng-repeat="csselem_mutual in csselem_mutuals">
+                            <span id="{{csselem_mutual.show.id}}" draggable="true" ondragstart="drag(event)">
+                                {{csselem_mutual.show.comment}}
+                            </span>
+                        </li>
+                        <!--<div class="row">-->
+                            <!--<div class="col-md-6" ng-repeat="csselem_mutual in csselem_mutuals" ng-class="{'uipanecontenthide':($index%2)}">-->
+                                <!--<span id="{{csselem_mutual.show.id}}" draggable="true" ondragstart="drag(event)">-->
+                                    <!--<!--<i class="{{csselem_mutual.show.id}}" ng-bind-html="csselem_mutual.show.icon"></i>-->-->
+                                    <!--{{csselem_mutual.show.comment}}-->
+                                 <!--</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </accordionmenu>
+
+                    <div class="hideitem">
+                        <span ng-repeat="csselem_layout in csselem_layouts">
+                            <span ng-bind-html="csselem_layout.hide"></span>
+                            <span ng-bind-html="csselem_layout.id"></span>
+                            <span ng-bind-html="csselem_layout.js"></span>
+                        </span>
+                        <span ng-repeat="csselem_htmlcomponent in csselem_htmlcomponents">
+                            <span ng-bind-html="csselem_htmlcomponent.hide"></span>
+                            <span ng-bind-html="csselem_htmlcomponent.id"></span>
+                            <span ng-bind-html="csselem_htmlcomponent.js"></span>
+                        </span>
+                        <span ng-repeat="csselem_container in csselem_containers">
+                            <span ng-bind-html="csselem_container.hide"></span>
+                            <span ng-bind-html="csselem_container.id"></span>
+                            <span ng-bind-html="csselem_container.js"></span>
+                        </span>
+                        <span ng-repeat="csselem_component in csselem_components">
+                            <span ng-bind-html="csselem_component.hide"></span>
+                            <span ng-bind-html="csselem_component.id"></span>
+                            <span ng-bind-html="csselem_component.js"></span>
+                        </span>
+                        <span ng-repeat="csselem_mutual in csselem_mutuals">
+                            <span ng-bind-html="csselem_mutual.hide"></span>
+                            <span ng-bind-html="csselem_mutual.id"></span>
+                            <span ng-bind-html="csselem_mutual.js"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!--电话模型-->
+    <div class="resbox">
+        <div class="stretch-col iframeNavContainer" id="se_ic_view137" style="left: 35px;right: 280px;bottom: 6px">
+            <div class="stretch-col scrollable" style="visibility: hidden">
+                <div id="phone-wrap" class="mobile-portrait" style="width: 373px;height: 585px;
+        border-top-left-radius: 25px;border-top-right-radius: 25px;border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;border-width: 4px;visibility: visible">
+                    <div id="phone" class="phone-frame" style="width: 362px;height: 575px;-webkit-border-image-transform: scale(1,1);">
+                        <iframe class="iframeres" id="mainIframe" name="mainIframe" src="ires/res.html">
+                        </iframe>
+                        <div id="dynamic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 用户写代码的地方-->
+    <div class="modal fade" id="editEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="editEventCtrl">
+        <div class="modal-dialog cusmodal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">编辑绑定事件</h4>
+                </div>
+                <div class="modal-body cusmodal">
+                    <div id="editor">
+                    </div>
+                </div>
+                <div class="modal-footer" style="margin: 0">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="saveButton" class="btn btn-primary" ng-click="saveEvent()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+     <!-- Modal 用户写代码的地方-->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">事件</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+        
+          <div class="form-group">
+           
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="menu func">
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right uimenu cbp-spmenu-open" id="cbp-spmenu-s2">
+            <div id="showfuncpane" ng-showfuncpane>
+                功能
+            </div>
+            <h3>属性设置</h3>
+            <div class="uipane funclist" ng-controller="funcPanelCtrl">
+                <div ng-view >
+
+                </div>
+                <div  ng-controller="navCtrl">
+                    <a href="#" ng-click="edit()" style="display: block;font-family: '微软雅黑';font-size: 20px;text-align: center;text-decoration: none;">回到page属性设置</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function onselectimage() {
+
+        var xmlHttpReq = null;
+
+        //IE浏览器使用ActiveX
+
+        if (window.ActiveXObject) {
+
+            xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+
+        }
+
+        //其它浏览器使用window的子对象XMLHttpRequest
+
+        else if (window.XMLHttpRequest) {
+
+            xmlHttpReq = new XMLHttpRequest();
+
+        }
+
+        var filenode = document.getElementById("file");
+
+
+
+
+
+        if (xmlHttpReq != null) {
+
+            //设置回调，当请求的状态发生变化时，就会被调用
+
+            xmlHttpReq.onreadystatechange = function () {
+
+                //等待上传结果
+
+                if (xmlHttpReq.readyState == 1) {
+
+                    filenode.parentNode.style.backgroundImage = "url('/images/bigloader.gif')";
+
+                }
+
+                //上传成功，返回的文件名，设置到div的背景中
+
+                if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200) {
+
+                    filenode.parentNode.style.backgroundImage = "url('indeximg/" + xmlHttpReq.responseText + "')";
+
+                }
+
+            }
+
+            //构造form数据
+
+            var form = new FormData();
+
+            form.append("file", filenode.files[0]);
+
+
+
+
+
+            //设置请求（没有真正打开），true：表示异步
+
+            xmlHttpReq.open("POST", "/upload", true);
+
+            //不要缓存
+
+            //xmlHttpReq.setRequestHeader("If-Modified-Since", "0");
+
+            //提交请求
+
+            xmlHttpReq.send(form);
+
+            //清除掉，否则下一次选择同样的文件就进入不到onchange函数中了
+
+            filenode.value = null;
+
+        }
+
+    }
+
+
+
+
+
+</script>
+<!--屏蔽的问题出在app.js身上-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="scripts/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="scripts/ace-builds//src-noconflict/ext-language_tools.js"></script>
+<script src="scripts/angular/app.js"></script><!--有问题-->
+<script src="scripts/angular/navCtrl.js"></script>
+<script src="scripts/angular/uiListCtrl.js"></script>
+<script src="scripts/angular/uiselect.js"></script>
+<script src="scripts/angular/funcPanelCtrl.js"></script>
+<script src="scripts/angular/listultplCtrl.js"></script>
+<script src="scripts/angular/pagetplCtrl.js"></script>
+<script src="scripts/angular/editEventCtrl.js"></script>
+<script src="scripts/plugins/messenger.js"></script>
+<script src="scripts/plugins/classie.js"></script>
+<script src="scripts/plugins/uuid.js"></script>
+<script src="scripts/domscript_share/domhandle_tool.js"></script>
+<script src="scripts/domscript_share/domhandle_data.js"></script>
+<script src="scripts/domscript_share/domhandle_event.js"></script>
+<script src="scripts/domscript_parent/messageinit_parent.js"></script>
+<script src="scripts/domscript_parent/messagefunc_parent.js"></script>
+<script src="scripts/domscript_parent/pleasedeleteafterdevelop.js"></script>
+<script src="scripts/domscript_parent/drag.js"></script>
+<script src="scripts/angular/toolbarCtrl.js"></script>
+<script src="scripts/angular/tableCtrl.js"></script>
+<script src="scripts/angular/gridCtrl.js"></script>
+<script src="scripts/angular/buttonCtrl.js"></script>
+<script src="scripts/angular/panelCtrl.js"></script>
+<script src="scripts/angular/tabCtrl.js"></script>
+<script src="scripts/angular/treeCtrl.js"></script>
+<script src="scripts/angular/zhuxingtuCtrl.js"></script>
+<script src="scripts/angular/swipeDivCtrl.js"></script>
+<script src="scripts/angular/normalDivCtrl.js"></script>
+<script src="scripts/angular/formCtrl.js"></script>
+<script src="scripts/angular/normalParaCtrl.js"></script>
+<script src="scripts/angular/pagechangeCtrl.js"></script>
+<script src="scripts/angular/focusimgCtrl.js"></script>
+<script src="scripts/angular/iconButtonCtrl.js"></script>
+<script src="scripts/angular/textShowCtrl.js"></script>
+<script src="scripts/angular/textphotoShowCtrl.js"></script>
+<script src="scripts/angular/normalLabelCtrl.js"></script>
+<script src="scripts/angular/normalLineCtrl.js"></script>
+<script src="scripts/angular/blockDivCtrl.js"></script>
+<script src="scripts/angular/inputCheckboxCtrl.js"></script>
+<script src="scripts/angular/inputRadioCtrl.js"></script>
+<script src="scripts/angular/inputSelectCtrl.js"></script>
+<script src="scripts/angular/inputTextCtrl.js"></script>
+<script src="scripts/angular/normalImageCtrl.js"></script>
+<script src="scripts/angular/textphotoShow2Ctrl.js"></script>
+<script src="scripts/angular/twonavCtrl.js"></script>
+<script src="scripts/angular/bottomMenuCtrl.js"></script>
+<script src="scripts/angular/timeshowCtrl.js"></script>
+<script src="scripts/angular/iconButtonDivCtrl.js"></script>
+<script src="scripts/angular/formDivCtrl.js"></script>
+<script src="scripts/domscript_parent/Copy.js"></script>
+
+
+</body>

@@ -1,0 +1,17 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='nparaTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="宽度"
+                           ng-model="$parent.normalLineWidthInput"
+                           ng-change="changeNormalLineWidth()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

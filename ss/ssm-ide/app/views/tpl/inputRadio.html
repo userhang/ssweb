@@ -1,0 +1,137 @@
+<div ng-model="no" class="linarrow">
+    <accordionmenu accordionmenu-title='inputRadioTitle' accordionmenu-show='true'>
+       <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+                 
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopyinputRadio"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.inputRadioidInput"
+                           ng-change="changeButtonContent()">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopyinputRadio')">复制</button>
+                </div>
+                 
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.inputRadioContentInput"
+                           ng-change="changeInputRadioContent()">
+                </div>
+            </div>
+        </li>
+         <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">NAME</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="NAME"
+                           ng-model="$parent.inputRadioName"
+                           ng-change="changeInputRadioName()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >文字字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.inputRadioContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeInputRadioContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="标题高度"
+                           ng-model="$parent.inputRadioHeightInput"
+                           ng-change="changeInputRadioHeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="标题宽度"
+                           ng-model="$parent.inputRadioWidthInput"
+                           ng-change="changeInputRadioWidth()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">按钮状态</div>
+                <div class="col-md-3">
+                    <input class="form-control input-sm"
+                           type="button"
+                           value="选中"
+                           ng-model="$parent.inputRadioChecked"
+                           ng-click="changeInputRadioChecked()" />
+                </div>
+                <div class="col-md-3">
+                    <input class="form-control input-sm"
+                           type="button"
+                           value="不选"
+                           ng-model="$parent.inputRadioUnchecked"
+                           ng-click="changeInputRadioUnchecked()" />
+                </div>
+            </div>
+        </li>
+
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='inputRadioeventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.inputRadioeventselect" class="form-control input-sm"
+                            ng-options="x.name for x in inputRadioevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinputRadioevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='inputRadioeventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editinputRadioevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delinputRadioevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

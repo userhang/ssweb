@@ -1,0 +1,116 @@
+<div ng-model="no" class="linarrow">
+    <accordionmenu accordionmenu-title='inputCheckboxTitle' accordionmenu-show='true'>
+       <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+                 
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopyinputCheckbox"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.inputCheckboxidInput"
+                          >
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopyinputCheckbox')">复制</button>
+                </div>
+                 
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.inputCheckboxContentInput"
+                           ng-change="changeInputCheckboxContent()">
+                </div>
+            </div>
+        </li>
+         <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">NAME</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="NAME"
+                           ng-model="$parent.inputCheckboxName"
+                           ng-change="changeInputCheckboxName()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >文字字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.inputCheckboxContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeInputCheckboxContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="标题高度"
+                           ng-model="$parent.inputCheckboxHeightInput"
+                           ng-change="changeInputCheckboxHeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="标题宽度"
+                           ng-model="$parent.inputCheckboxWidthInput"
+                           ng-change="changeInputCheckboxWidth()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+     <accordionmenu accordionmenu-title='inputCheckboxeventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.inputCheckboxeventselect" class="form-control input-sm"
+                            ng-options="x.name for x in inputCheckboxevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinputCheckboxevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='inputCheckboxeventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editinputCheckboxevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delinputCheckboxevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

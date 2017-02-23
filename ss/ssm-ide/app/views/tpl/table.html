@@ -1,0 +1,267 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='tableContentTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="Copytable"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.tableidInput">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('Copytable')">复制</button>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasCaptionChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasCaption()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.captionContentInput"
+                           ng-change="changeCaptionContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.tableRowNoSelected"
+                            ng-options="x for x in tableRowNo"
+                            ng-change="deleteTableRowNo()">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    行
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.tableLineNoSelected"
+                            ng-options="x for x in tableLineNo"
+                            ng-change="deleteTableLineNo()">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    列
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">增加第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.tableLineNoSelected2"
+                            ng-options="x for x in tableLineNo2"
+                            ng-change="addTableLineNo()">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    列
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">行数</div>
+                <div class="col-md-6">
+                    <button id="addrow" type="button" class="btn btn-success btn-xs" ng-click="addrow()">+1</button>
+                    <button id="cutrow" type="button" class="btn btn-warning btn-xs" ng-click="cutrow()">-1</button>
+                </div>
+            </div>
+        </li>
+
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='tableRowContentTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.tableRowNoSelected"
+                            ng-options="x for x in tableRowNo"
+                            ng-change="changeTableRowNo()">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    行
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单元格</div>
+                <div class="col-md-6">
+                    左-->右
+                    <button id="addCell"
+                            type="button"
+                            class="btn btn-success btn-xs"
+                            ng-click="addCell()">+1</button>&nbsp&nbsp&nbsp
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单元格</div>
+                <div class="col-md-6">
+                    右-->左
+                    <button id="cutCell"
+                            type="button"
+                            class="btn btn-warning btn-xs"
+                            ng-click="cutCell()">-1</button>&nbsp&nbsp&nbsp&nbsp
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单元格</div>
+                <div class="col-md-6">
+                    右-->左
+                    <button id="addCell2"
+                            type="button"
+                            class="btn btn-success btn-xs"
+                            ng-click="addCell2()">+1</button>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单元格</div>
+                <div class="col-md-6">
+                    左-->右
+                    <button id="cutCell2"
+                            type="button"
+                            class="btn btn-warning btn-xs"
+                            ng-click="cutCell2()">-1</button>
+                </div>
+            </div>
+        </li>
+
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='tableCellContentTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.tableCellNoSelected"
+                            ng-options="x for x in tableCellNo"
+                            ng-change="changeTableCellNo()">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    单元格
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单元格内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="单元格内容"
+                           ng-model="$parent.tableCellContentInput"
+                           ng-change="changeTableCellContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单元格长度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="单元格长度"
+                           ng-model="$parent.tableCellLengthInput"
+                           ng-blur="changeTableCellLength()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">单元格宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="单元格宽度"
+                           ng-model="$parent.tableCellWidthInput"
+                           ng-blur="changeTableCellWidth()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">表头/单元格</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.isHeaderChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeIsHeader()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='tableeventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.tableeventselect" class="form-control input-sm"
+                            ng-options="x.name for x in tableevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addtableevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='tableeventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="edittableevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="deltableevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

@@ -1,0 +1,103 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='btMnTitle' accordionmenu-show='true'>
+        <!--列表项个数-->
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">列表项个数</div>
+                <div class="col-md-6">
+                    <button id="addBottomMenuNum" type="button" class="btn btn-success btn-xs" ng-click="addBottomMenuNum()">+1</button>
+                    <button id="cutBottomMenuNum" type="button" class="btn btn-warning btn-xs" ng-click="cutBottomMenuNum()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.bottomMenuItemNoSelected"
+                            ng-options="x for x in bottomMenuItemNo"
+                            ng-change="changeBottomMenuItemNo()">
+                    </select>
+
+                </div>
+                <div class="col-md-4">
+                    个列表项
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.bottomMenuContentInput"
+                           ng-change="changeBottomMenuContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">链到页面</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.bottomMenuItemHrefContentInput"
+                           ng-change="changeBottomMenuItemHrefContent()">
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >图标</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.bottomMenuTypeSelected" class="form-control input-sm"
+                            ng-options="x.name for x in bottomMenuType"
+                            ng-change="changeBottomMenuType()">
+                    </select>
+                </div>
+            </div>
+        </li>
+
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='bottomMenuEventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.bottomMenueventselect" class="form-control input-sm"
+
+                            ng-options="x.name for x in bottomMenuevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addBottomMenuEvent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='bottomMenuEventEditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" >
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editBottomMenuEvent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delBottomMenuEvent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

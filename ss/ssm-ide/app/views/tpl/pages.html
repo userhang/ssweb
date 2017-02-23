@@ -1,0 +1,59 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='wholePageConfigTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">初始化页面</div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary btn-xs" ng-click="init()">重新开始</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">新增页面</div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addpage()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">跳转到ID为</div>
+                <div class="col-md-4">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.curPageid"
+                            ng-options="x for x in attr.pageidList"
+                            ng-change="changeCurPage()">
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    的页面
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='eachPageConfigTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">本页ID</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="此页面ID内容"
+                           ng-model="$parent.curPageid"
+                           ng-blur="changeCurPageidContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除本页面</div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delCurPage()">-1</button>
+                </div>
+            </div>
+        </li>
+
+
+    </accordionmenu>
+</div>

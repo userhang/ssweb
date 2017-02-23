@@ -1,0 +1,87 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='ndivTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopynormalDiv"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.normalDividInput">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopynormalDiv')">复制</button>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">边框样式</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasBorderChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasBorder()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">div高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="100"
+                           placeholder="高度"
+                           ng-model="$parent.divHeightInput"
+                           ng-change="changeDivHeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.divBgColorInput"
+                           ng-change="changeDivBgColor()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='normalDiveventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.normalDiveventselect" class="form-control input-sm"
+                            ng-options="x.name for x in normalDivevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addnormalDivevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='normalDiveventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editnormalDivevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delnormalDivevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

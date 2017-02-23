@@ -1,0 +1,85 @@
+<div ng-model="no" class="linarrow">
+    <accordionmenu accordionmenu-title='treeTitle1' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">树个数</div>
+                <div class="col-md-6">
+                    <button id="addtree" type="button" class="btn btn-success btn-xs" ng-click="addtree()">+1</button>
+                    <button id="cuttree" type="button" class="btn btn-warning btn-xs" ng-click="cuttree()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.treeNoSelected"
+                            ng-options="x for x in treeNo"
+                            ng-change="changeTreeNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个树
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.treeTitleContentInput"
+                           ng-change="changeTreeTitleContent()">
+                </div>
+            </div>
+        </li>
+        </accordionmenu>
+        <accordionmenu accordionmenu-title='treeTitle2' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">新增列表项</div>
+                <div class="col-md-6">
+                    <button id="addtreeli" type="button" class="btn btn-success btn-xs" ng-click="addtreeli()">+1</button>
+                </div>
+
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除列表项</div>
+                <div class="col-md-6">
+
+                    <button id="cuttreeli" type="button" class="btn btn-warning btn-xs" ng-click="cuttreeli()">-1</button>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.treeItemNoSelected"
+                            ng-options="x for x in treeItemNo"
+                            ng-change="changeTreeItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个列表项
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">列表内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标签内容"
+                           ng-model="$parent.treeItemContentInput"
+                           ng-change="changeTreeItemContent()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

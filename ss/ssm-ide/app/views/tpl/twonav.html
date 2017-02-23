@@ -1,0 +1,145 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='TwoNav1' accordionmenu-show='true'>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">菜单个数</div>
+                <div class="col-md-6">
+                    <button id="twonavadd" type="button" class="btn btn-success btn-xs" ng-click="twonavadd()">+1</button>
+                    <button id="twonavcut" type="button" class="btn btn-warning btn-xs" ng-click="twonavcut()">-1</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='TwoNav2' accordionmenu-show='true'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-6">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.twonavItemNoSelected"
+                            ng-options="x for x in twonavItemNo"
+                            ng-change="changetwonavItemNo()">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个导航栏
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="导航项内容"
+                           ng-model="$parent.twonavContentInput"
+                           ng-change="changetwonavContent()">
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">菜单个数</div>
+                <div class="col-md-6">
+                    <button id="twonavziadd" type="button" class="btn btn-success btn-xs" ng-click="twonavziadd()">+1</button>
+                    <button id="twonavzicut" type="button" class="btn btn-warning btn-xs" ng-click="twonavzicut()">-1</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='TwoNav3' accordionmenu-show='true'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-6">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.twonavziItemNoSelected"
+                            ng-options="x for x in twonavziItemNo"
+                            ng-change="changetwonavziItemNo()">
+                        <option value="">---</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个导航栏
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="Copytwonav"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.twonavidInput"
+                           ng-change="changetwonavid()">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('Copytwonav')">复制</button>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="导航项内容"
+                           ng-model="$parent.twonavziContentInput"
+                           ng-change="changetwonavziContent()">
+                </div>
+            </div>
+        </li>
+        <!--<li>-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-4 col-md-offset-1 textAlignAtRight">改变二级链接（ID值）</div>-->
+        <!--<div class="col-md-6">-->
+        <!--<input class="form-control input-sm"-->
+        <!--type="text"-->
+        <!--placeholder="链接内容"-->
+        <!--ng-model="$parent.twonavziHrefContentInput"-->
+        <!--ng-change="changetwonavziHrefContent()">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</li>-->
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='twonaveventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.twonaveventselect" class="form-control input-sm"
+                            ng-options="x.name for x in twonavevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addtwonavevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='twonaveventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="edittwonavevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="deltwonavevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

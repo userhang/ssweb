@@ -1,0 +1,266 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='PanelTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">面板项个数</div>
+                <div class="col-md-6">
+                    <button id="addPanelli" type="button" class="btn btn-success btn-xs" ng-click="addPanelli()">+1</button>
+                    <button id="cutPanelli" type="button" class="btn btn-warning btn-xs" ng-click="cutPanelli()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight" >
+                    <span >面板类型</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.panelTypeSelected" class="form-control input-sm"
+                            ng-options="x.name for x in panelType"
+                            ng-change="changePanelType()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">圆角样式</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.panelhasBorderRadiusChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changePanelHasBorderRadius()">
+                </div>
+            </div>
+        </li>
+        <!--<li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">面板项高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="面板项高度"
+                           ng-model="$parent.panelHeightInput"
+                           ng-change="changePanelHeight()">
+                </div>
+            </div>
+        </li>-->
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='PanelitemTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.panelItemNoSelected"
+                            ng-options="x for x in panelItemNo"
+                            ng-change="changePanelItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个面板项
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除当前面板项</div>
+                <div class="col-md-6">
+                    <button id="cutthisPli" type="button" class="btn btn-warning btn-xs" ng-click="cutthisPli()">删除</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">正文内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="正文内容"
+                           ng-model="$parent.panelItemContentInput"
+                           ng-change="changePanelItemContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">正文颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.panelItemContentColorInput"
+                           ng-change="changePanelItemContentColor()">
+                    <datalist class="colors">
+                    </datalist>
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 defaultFontFamily">
+                    <span >正文字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.panelItemContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changePanelItemContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">箭头样式</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.panelhasArrowChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changePanelHasArrow()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">向前样式</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.panelhasForwardChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changePanelHasForward()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">显示小标注</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.panelhasSmallTextChecked'
+                            ng-true-value="yes" ng-false-value="no"
+                            ng-change="changePanelHasSmallText()">
+                    <input type="text"
+                            class="form-control"
+                            placeholder="小标注内容"
+                            ng-model="$parent.panelsmallTextContentInput"
+                            ng-change="changePanelHasSmallTextContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 defaultFontFamily">
+                    <span >小标注字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.panelsmallTextContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changePanelHasSmallTextContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">小标注颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.panelsmallTextContentColorInput"
+                           ng-change="changePanelHasSmallTextContentColor()">
+                    <datalist class="colors">
+                    </datalist>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">显示小标题</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.panelhasSmallTitleChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changePanelHasSmallTitle()">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="小标注内容"
+                           ng-model="$parent.panelsmallTitleContentInput"
+                           ng-change="changePanelHasSmallTitleContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 defaultFontFamily">
+                    <span >小标题字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.panelsmallTitleContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changePanelHasSmallTitleContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">小标题颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.panelsmallTitleContentColorInput"
+                           ng-change="changePanelHasSmallTitleContentColor()">
+                    <datalist class="colors">
+                    </datalist>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.panelBackgroundColorInput"
+                           ng-change="changePanelBackgroundColor()">
+                    <datalist id="colors">
+                    </datalist>
+                </div>
+            </div>
+        </li>
+
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='paneleventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.paneleventselect" class="form-control input-sm"
+                            ng-change="changePaneleventselect()"
+                            ng-options="x.name for x in panelevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addpanelevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='paneleventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-class="{'curfuncdisplay': {{$parent.panelItemNoSelected}} != {{func.childattr.panelItemNo}} }">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editpanelevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delpanelevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

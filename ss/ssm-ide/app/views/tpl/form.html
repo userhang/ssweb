@@ -1,0 +1,131 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='formTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.formTitleInput"
+                           ng-change="changeFormTitle()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.formItemNoSelected"
+                            ng-options="x for x in formItemNo"
+                            ng-change="changeFormItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个表单组件
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">加一个提交按钮</div>
+                <div class="col-md-6">
+                    <button id="addsubmit" type="button" class="btn btn-success btn-xs" ng-click="addsubmit()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">加一个单选钮</div>
+                <div class="col-md-6">
+                    <button id="addradio" type="button" class="btn btn-success btn-xs" ng-click="addradio()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">加一个多选钮</div>
+                <div class="col-md-6">
+                    <button id="addcheckbox" type="button" class="btn btn-success btn-xs" ng-click="addcheckbox()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">加一个文本框</div>
+                <div class="col-md-6">
+                    <button id="addtext" type="button" class="btn btn-success btn-xs" ng-click="addtext()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">加一个文本域</div>
+                <div class="col-md-6">
+                    <button id="addtextarea" type="button" class="btn btn-success btn-xs" ng-click="addtextarea()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">加一个密码框</div>
+                <div class="col-md-6">
+                    <button id="addpassword" type="button" class="btn btn-success btn-xs" ng-click="addpassword()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">换行</div>
+                <div class="col-md-6">
+                    <button id="addbr" type="button" class="btn btn-success btn-xs" ng-click="addbr()">+1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除该组件</div>
+                <div class="col-md-6">
+                    <button id="cutformitem" type="button" class="btn btn-warning btn-xs" ng-click="cutformitem()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">说明文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="列表项内容"
+                           ng-model="$parent.formItemContentInput"
+                           ng-change="changeFormItemContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">组件value</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="组件value"
+                           ng-model="$parent.formItemValueInput"
+                           ng-change="changeFormItemValue()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">组件name</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="组件name"
+                           ng-model="$parent.formItemNameInput"
+                           ng-change="changeFormItemName()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

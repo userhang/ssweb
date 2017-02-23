@@ -1,0 +1,168 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='nparaTitle' accordionmenu-show='true'>
+       <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+                 
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopytextShow"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.textShowidInput">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopytextShow')">复制</button>
+                </div>
+                 
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文本内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="文本内容"
+                           ng-model="$parent.textShowContentInput"
+                           ng-change="changeTextShowContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >对齐方式</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.textAlignTypeSelected" class="form-control input-sm"
+                            ng-options="x.name for x in textAlignType"
+                            ng-change="changeTextAlignType()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 defaultFontFamily">
+                    <span >文本字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.textContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in textContentFontFamily"
+                            ng-change="changeComponentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">字体大小</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="文字大小"
+                           ng-model="$parent.textShowFontWeightInput"
+                           ng-change="changeTextShowFontWeight()">
+                </div>
+            </div>
+        </li>
+        <!--<li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">字体大小1</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="文字大小1"
+                           ng-model="$parent.textShowFontWeightInput1"
+                           ng-change="changeTextShowFontWeight1()">
+                </div>
+            </div>
+        </li>-->
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文本高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="60"
+                           placeholder="文本高度"
+                           ng-model="$parent.textShowHeightInput"
+                           ng-change="changeTextShowHeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文本颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.textShowColorInput"
+                           ng-change="changeTextShowColor()">
+                    <datalist class="colors">
+                    </datalist>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.textShowBgColorInput"
+                           ng-change="changeTextShowBgColor()">
+                </div>
+            </div>
+        </li>
+       <!-- <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">文本宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="文本宽度"
+                           ng-model="$parent.textShowWidthInput"
+                           ng-change="changeTextShowWidth()">
+                </div>
+            </div>
+        </li>-->
+    </accordionmenu>
+     <accordionmenu accordionmenu-title='textShoweventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.textShoweventselect" class="form-control input-sm"
+                            ng-options="x.name for x in textShowevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addtextShowevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='textShoweventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="edittextShowevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="deltextShowevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

@@ -1,0 +1,1 @@
+supervisor -i app/ires/index.js,app/ires/index.html,app/res.zip app.js

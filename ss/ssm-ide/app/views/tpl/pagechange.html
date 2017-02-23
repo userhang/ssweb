@@ -1,0 +1,77 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='pagechangeTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变“首页”链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.firstPageHrefContentInput"
+                           ng-change="changeFirstPageHrefContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变“上一页”链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.prePageHrefContentInput"
+                           ng-change="changePrePageHrefContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变“下一页”链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.nextPageHrefContentInput"
+                           ng-change="changeNextPageHrefContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">改变“尾页”链接（ID值）</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.lastPageHrefContentInput"
+                           ng-change="changeLastPageHrefContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">“第几页”文字内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="列表项内容"
+                           ng-model="$parent.pageNumItemContentInput"
+                           ng-change="changePageNumItemContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 defaultFontFamily">
+                    <span >文字字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.pageNumItemContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changePageNumItemContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

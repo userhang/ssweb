@@ -1,0 +1,193 @@
+<div ng-model="no" class="linarrow">
+    <accordionmenu accordionmenu-title='inputSelectTitle' accordionmenu-show='true'>
+       <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+                 
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopyinputSelect"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.inputSelectidInput">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopyinputSelect')">复制</button>
+                </div>
+                 
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题内容"
+                           ng-model="$parent.inputSelectContentInput"
+                           ng-change="changeInputSelectContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >标题字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.inputSelectContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeInputSelectContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >列表项字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.inputSelectBoxContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeInputSelectBoxContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+          
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">外部高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="外部高度"
+                           ng-model="$parent.inputSelectHeightInput"
+                           ng-change="changeInputSelectHeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">外部宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="外部宽度"
+                           ng-model="$parent.inputSelectWidthInput"
+                           ng-change="changeInputSelectWidth()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">选项高度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="选项高度"
+                           ng-model="$parent.inputSelectContentHeightInput"
+                           ng-change="changeInputSelectContentHeight()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">选项宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="选项宽度"
+                           ng-model="$parent.inputSelectContentWidthInput"
+                           ng-change="changeInputSelectContentWidth()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='inputSelectTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">下拉项个数</div>
+                <div class="col-md-6">
+                    <button id="addoption" type="button" class="btn btn-success btn-xs" ng-click="addoption()">+1</button>
+                    <button id="cutoption" type="button" class="btn btn-warning btn-xs" ng-click="cutoption()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.selectItemNoSelected"
+                            ng-options="x for x in selectItemNo"
+                            ng-change="changeSelectItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个列表项
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="内容"
+                           ng-model="$parent.inputSelectBoxContentInput"
+                           ng-change="changeInputSelectBoxContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">值</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="value"
+                           ng-model="$parent.inputSelectValueInput"
+                           ng-change="changeInputSelectValue()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+     <accordionmenu accordionmenu-title='inputSelecteventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.inputSelecteventselect" class="form-control input-sm"
+                            ng-options="x.name for x in inputSelectevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinputSelectevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='inputSelecteventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editinputSelectevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delinputSelectevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

@@ -1,0 +1,127 @@
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='swdivTitle' accordionmenu-show='true'>
+        <!--<li>-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-4 col-md-offset-1 textAlignAtRight">刷新</div>-->
+        <!--<div class="col-md-6">-->
+        <!--<button id="addtabli" type="button" class="btn btn-success btn-xs" ng-click="refswipeDiv()">刷新</button>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</li>-->
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="CopyswipeDiv"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.swipeDividInput"
+                           ng-change="changeswipeDivid()">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('CopyswipeDiv')">复制</button>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除当前侧边栏</div>
+                <div class="col-md-6">
+                    <button id="addtabli" type="button" class="btn btn-success btn-xs" ng-click="deleteswdiv()">删除</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">列表项个数</div>
+                <div class="col-md-6">
+                    <button id="addswipeDivli" type="button" class="btn btn-success btn-xs" ng-click="addswipeDivli()">+1</button>
+                    <button id="cutswipeDivli" type="button" class="btn btn-warning btn-xs" ng-click="cutswipeDivli()">-1</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row" >
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">第</div>
+                <div class="col-md-3">
+                    <select class="form-control input-sm"
+                            ng-model="$parent.swipeDivItemNoSelected"
+                            ng-options="x for x in swipeDivItemNo"
+                            ng-change="changeSwipeDivItemNo()">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    个列表项
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">链到页面</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="链接内容"
+                           ng-model="$parent.swipeDivItemHrefContentInput"
+                           ng-change="changeSwipeDivItemHrefContent()">
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">删除当前列表项</div>
+                <div class="col-md-6">
+                    <button id="cutthisSwipeDivli" type="button" class="btn btn-warning btn-xs" ng-click="cutthisSwipeDivli()">删除</button>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">
+                    <span >按钮图标</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.swipeDivTypeSelected" class="form-control input-sm"
+                            ng-options="x.name for x in swipeDivType"
+                            ng-change="changeSwipeDivType()">
+                    </select>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='swipeDiveventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.swipeDiveventselect" class="form-control input-sm"
+                            ng-options="x.name for x in swipeDivevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addswipeDivevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='swipeDiveventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-show="isShow(func.flag)">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editswipeDivevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="delswipeDivevent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+</div>

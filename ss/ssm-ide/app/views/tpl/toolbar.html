@@ -1,0 +1,282 @@
+<!--标题栏属性编辑栏-->
+<div ng-model="no" class="linarrow" >
+    <accordionmenu accordionmenu-title='toolbarContentTitle' accordionmenu-show='true'>
+  <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">ID</div>
+                 
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           id="Copytoolbar"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.toolbaridInput">
+                    <button type="button" class="btn btn-success btn-xs" onclick="copytext('Copytoolbar')">复制</button>
+                </div>
+                 
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题栏内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="标题栏内容"
+                           ng-model="$parent.toolbarContentInput"
+                           ng-change="changeToolbarContent()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >标题字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.toolbarContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeToolbarContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.toolBarBgColorInput"
+                           ng-change="changeToolBarBgColor()">
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.toolBarTitleColorInput"
+                           ng-change="changeToolBarTitleColor()">
+                </div>
+            </div>
+        </li>
+
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='toolbarModuleTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">返回按钮</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasBackChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasBack()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题按钮</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasButtonChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasButton()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='moduleContentTitle' accordionmenu-show='true'>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">返回钮内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.backContentInput"
+                           ng-change="changBackContent()">
+                </div>
+            </div>
+        </li>
+        <!--<li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">返回钮字体</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮字体"
+                           ng-model="$parent.backContentFontFamilyInput"
+                           ng-change="changBackContentFontFamily()">
+                </div>
+            </div>
+        </li>-->
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >返回钮字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.backContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changBackContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">返回钮颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.toolBarBackColorInput"
+                           ng-change="changeToolBarBackColor()">
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">返回钮背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.toolBarBackBgColorInput"
+                           ng-change="changeToolBarBackBgColor()">
+                </div>
+            </div>
+        </li>
+
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题钮内容</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="按钮内容"
+                           ng-model="$parent.toolbarButtonContentInput"
+                           ng-change="changeToolbarButtonContent()">
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <span >提示钮字体</span>
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="$parent.toolbarButtonContentFontFamilySelected" class="form-control input-sm"
+                            ng-options="x.name for x in componentFontFamily"
+                            ng-change="changeToolbarButtonContentFontFamily()">
+                    </select>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">提示钮颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.toolBarButtonColorInput"
+                           ng-change="changeToolBarButtonColor()">
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">提示钮背景颜色</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="color"
+                           list="colors"
+                           ng-model="$parent.toolBarButtonBgColorInput"
+                           ng-change="changeToolBarButtonBgColor()">
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='headListContentTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">标题下拉框</div>
+                <div class="col-md-6">
+                    <input type="checkbox" ng-model='$parent.hasHeadListChecked'
+                           ng-true-value="yes" ng-false-value="no"
+                           ng-change="changeHasHeadList()">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">下拉框列表</div>
+                <div class="col-md-6">
+                    <button id="addhli" type="button" class="btn btn-success btn-xs" ng-click="addhli()">+1</button>
+                    <button id="cuthli" type="button" class="btn btn-warning btn-xs" ng-click="cuthli()">-1</button>
+                    <!--<button id="refli" type="button" class="btn btn-success btn-xs" ng-click="reftoolbar()">刷新</button>-->
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">下拉列表个数</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="text"
+                           placeholder="列表内容"
+                           ng-model="$parent.headListItemNo">
+                </div>
+            </div>
+        </li>
+
+    <!--</accordionmenu>-->
+    <accordionmenu accordionmenu-title='toolbareventbindTitle' accordionmenu-show='true'>
+        <li>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <select ng-model="$parent.toolbareventselect" class="form-control input-sm"
+                            ng-options="x.name for x in toolbarevent">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addevent()">新增</button>
+                    <button type="button" class="btn btn-success btn-xs" ng-click="addinitjs()">适配</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+    <accordionmenu accordionmenu-title='toolbareventeditTitle' accordionmenu-show='true'>
+        <li ng-repeat="func in elemEventList.funclist" ng-class="{'curfuncdisplay': {{$parent.hasButtonChecked}} != {{func.childattr.hasButton}} }">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 textAlignAtRight">
+                    <!--此处需设置禁用-->
+                    <input type="text"
+                           class="form-control input-sm"
+                           placeholder="func.funcType.name"
+                           ng-model="func.funcType.name"
+                           ng-disabled="true">
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-success btn-xs" ng-click="editoolbarevent(func)">编辑</button>
+                    <button type="button" class="btn btn-warning btn-xs" ng-click="deletoolbarvent(func)">删除</button>
+                </div>
+            </div>
+        </li>
+    </accordionmenu>
+
+</div>
