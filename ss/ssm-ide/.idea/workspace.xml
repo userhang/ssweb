@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="37ec176d-464d-4150-a854-4187d0f71149" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/ace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/initjs.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/ires/img/123/1452670691260.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/start.bat" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/res.zip" afterPath="$PROJECT_DIR$/app/res.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/TwoNav.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/TwoNav.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/chartBar.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/chartBar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/chartLine.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/chartLine.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/dhl.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/dhl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/exTheme.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/exTheme.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/imgSlider.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/imgSlider.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/loader.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/loader.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/popOver.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/popOver.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/timeshow.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ext/timeshow.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ssmobile.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/lib/ssmobile.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/ssmobile/themes/lightBlue.min.css" afterPath="$PROJECT_DIR$/app/ires/deps/ssmobile/themes/lightBlue.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/deps/zepto/zepto.min.js" afterPath="$PROJECT_DIR$/app/ires/deps/zepto/zepto.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/index.html" afterPath="$PROJECT_DIR$/app/ires/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/index.js" afterPath="$PROJECT_DIR$/app/ires/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/res.html" afterPath="$PROJECT_DIR$/app/ires/res.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ires/view.html" afterPath="$PROJECT_DIR$/app/ires/view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/blockDivCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/blockDivCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/bottomMenuCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/bottomMenuCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/buttonCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/buttonCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/editEventCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/editEventCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/focusimgCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/focusimgCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/iconButtonCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/iconButtonCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/iconButtonDivCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/iconButtonDivCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/inputCheckboxCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/inputCheckboxCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/inputRadioCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/inputRadioCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/inputSelectCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/inputSelectCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/inputTextCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/inputTextCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/navCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/navCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/normalDivCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/normalDivCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/normalImageCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/normalImageCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/normalLabelCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/normalLabelCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/normalParaCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/normalParaCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/panelCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/panelCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/swipeDivCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/swipeDivCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/tabCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/tabCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/tableCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/tableCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/textShowCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/textShowCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/textphotoShow2Ctrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/textphotoShow2Ctrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/textphotoShowCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/textphotoShowCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/toolbarCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/toolbarCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/twonavCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/twonavCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/uiListCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/uiListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/angular/zhuxingtuCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/angular/zhuxingtuCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_blockDiv.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_blockDiv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_button.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_focusimg.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_focusimg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_iconButton.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_iconButton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_iconButtonDiv.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_iconButtonDiv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputCheckbox.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputCheckbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputRadio.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputRadio.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputSelect.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputSelect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputText.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_inputText.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_main.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalDiv.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalDiv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalImage.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalImage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalLabel.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalLabel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalPara.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_normalPara.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_page.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_page.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_swipeDiv.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_swipeDiv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_tab.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_table.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_table.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_textShow.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_textShow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_textphotoShow.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_textphotoShow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_textphotoShow2.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_textphotoShow2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_toolbar.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_toolbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_twonav.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/domhandle_twonav.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/generalDomhandle_componentColor.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/generalDomhandle_componentColor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/main.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_child/messagefunc_child.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_child/messagefunc_child.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/domscript_parent/drag.js" afterPath="$PROJECT_DIR$/app/scripts/domscript_parent/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/blockDiv.html" afterPath="$PROJECT_DIR$/app/views/tpl/blockDiv.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/bottomMenu.html" afterPath="$PROJECT_DIR$/app/views/tpl/bottomMenu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/button.html" afterPath="$PROJECT_DIR$/app/views/tpl/button.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/focusimg.html" afterPath="$PROJECT_DIR$/app/views/tpl/focusimg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/iconButton.html" afterPath="$PROJECT_DIR$/app/views/tpl/iconButton.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/iconButtonDiv.html" afterPath="$PROJECT_DIR$/app/views/tpl/iconButtonDiv.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/inputCheckbox.html" afterPath="$PROJECT_DIR$/app/views/tpl/inputCheckbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/inputRadio.html" afterPath="$PROJECT_DIR$/app/views/tpl/inputRadio.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/inputSelect.html" afterPath="$PROJECT_DIR$/app/views/tpl/inputSelect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/inputText.html" afterPath="$PROJECT_DIR$/app/views/tpl/inputText.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/normalDiv.html" afterPath="$PROJECT_DIR$/app/views/tpl/normalDiv.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/normalImage.html" afterPath="$PROJECT_DIR$/app/views/tpl/normalImage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/normalLabel.html" afterPath="$PROJECT_DIR$/app/views/tpl/normalLabel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/normalPara.html" afterPath="$PROJECT_DIR$/app/views/tpl/normalPara.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/panel.html" afterPath="$PROJECT_DIR$/app/views/tpl/panel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/swipeDiv.html" afterPath="$PROJECT_DIR$/app/views/tpl/swipeDiv.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/table.html" afterPath="$PROJECT_DIR$/app/views/tpl/table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/textShow.html" afterPath="$PROJECT_DIR$/app/views/tpl/textShow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/textphotoShow.html" afterPath="$PROJECT_DIR$/app/views/tpl/textphotoShow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/textphotoShow2.html" afterPath="$PROJECT_DIR$/app/views/tpl/textphotoShow2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/toolbar.html" afterPath="$PROJECT_DIR$/app/views/tpl/toolbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/twonav.html" afterPath="$PROJECT_DIR$/app/views/tpl/twonav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tpl/zhuxingtu.html" afterPath="$PROJECT_DIR$/app/views/tpl/zhuxingtu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/upload.js" afterPath="$PROJECT_DIR$/routes/upload.js" />
+    </list>
+    <ignored path="ssm-ide.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ssm-ide" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="buttonCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/angular/buttonCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="165" column="36" selection-start-line="165" selection-start-column="14" selection-end-line="165" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="button.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tpl/button.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.647059">
+              <caret line="117" column="107" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uiListCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/angular/uiListCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="554" column="6" selection-start-line="554" selection-start-column="6" selection-end-line="554" selection-end-column="6" />
+              <folding>
+                <marker date="1483173624266" expanded="true" signature="4079:4893" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="6209:6237" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="9208:9700" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="10223:10325" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="11634:11657" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="11997:12015" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="12336:12367" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="12417:12491" placeholder="..." />
+                <marker date="1483173624266" expanded="true" signature="12740:12772" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/angular/navCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editEventCtrl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/angular/editEventCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.59456396">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="focusimgCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/angular/focusimgCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="315" column="36" selection-start-line="315" selection-start-column="36" selection-end-line="315" selection-end-column="36" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ace.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/ace.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.735294">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="239" column="28" selection-start-line="239" selection-start-column="28" selection-end-line="239" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/views/tpl/button.html" />
+        <option value="$PROJECT_DIR$/app/ace.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/iconButton.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/iconButtonCtrl.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/normalPara.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/normalParaCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/normalLabel.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/buttonCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/normalLabelCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/normalImage.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/normalImageCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/inputText.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/inputTextCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/inputSelect.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/inputRadio.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/inputCheckbox.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/inputSelectCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/inputCheckboxCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/inputRadioCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/blockDiv.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/normalDiv.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/blockDivCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/normalDivCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/textShow.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/textphotoShow.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/textphotoShow2.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/textphotoShow2Ctrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/textphotoShowCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/textShowCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/bottomMenu.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/toolbar.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/panel.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/bottomMenuCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/toolbarCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/panelCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/table.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/iconButtonDiv.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/tableCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/iconButtonDivCtrl.js" />
+        <option value="$PROJECT_DIR$/app/views/tpl/zhuxingtu.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/twonav.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/swipeDiv.html" />
+        <option value="$PROJECT_DIR$/app/views/tpl/focusimg.html" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/zhuxingtuCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/swipeDivCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/twonavCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/focusimgCtrl.js" />
+        <option value="$PROJECT_DIR$/app/ace.html" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/app/scripts/angular/editEventCtrl.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true">
+    <gruntfile path="$PROJECT_DIR$/gruntfile.js" />
+  </component>
+  <component name="JsBuildToolPackageJson" detection-done="true">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domscript_share" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domscript_parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssm-ide" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="js-jscs-nodeInterpreter" value="G:\nodejs\node.exe" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37ec176d-464d-4150-a854-4187d0f71149" name="Default" comment="" />
+      <created>1453627732914</created>
+      <option name="number" value="Default" />
+      <updated>1453627732914</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14947917" sideWeight="0.67103827" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14947917" sideWeight="0.32896176" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/normalParaCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3114383">
+          <caret line="98" column="3" selection-start-line="98" selection-start-column="3" selection-end-line="98" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/normalLabel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.970589">
+          <caret line="94" column="107" selection-start-line="94" selection-start-column="107" selection-end-line="94" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/normalLabelCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.028312571">
+          <caret line="215" column="36" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/normalImageCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/inputText.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32391047">
+          <caret line="119" column="107" selection-start-line="119" selection-start-column="107" selection-end-line="119" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/inputTextCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.47225368">
+          <caret line="245" column="35" selection-start-line="245" selection-start-column="35" selection-end-line="245" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/inputSelect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17550059">
+          <caret line="169" column="107" selection-start-line="169" selection-start-column="107" selection-end-line="169" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/inputRadio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32391047">
+          <caret line="113" column="107" selection-start-line="113" selection-start-column="107" selection-end-line="113" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/inputCheckbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58892816">
+          <caret line="92" column="107" selection-start-line="92" selection-start-column="107" selection-end-line="92" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/inputSelectCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5753114">
+          <caret line="297" column="36" selection-start-line="297" selection-start-column="36" selection-end-line="297" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/inputCheckboxCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.822197">
+          <caret line="222" column="36" selection-start-line="222" selection-start-column="36" selection-end-line="222" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/inputRadioCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17893545">
+          <caret line="247" column="36" selection-start-line="247" selection-start-column="36" selection-end-line="247" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/normalImage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3722026">
+          <caret line="108" column="107" selection-start-line="108" selection-start-column="107" selection-end-line="108" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/normalDiv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4416961">
+          <caret line="63" column="107" selection-start-line="63" selection-start-column="107" selection-end-line="63" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/blockDiv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29446408">
+          <caret line="76" column="107" selection-start-line="76" selection-start-column="107" selection-end-line="76" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/normalDivCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20724802">
+          <caret line="199" column="36" selection-start-line="199" selection-start-column="36" selection-end-line="199" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/blockDivCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29218572">
+          <caret line="212" column="36" selection-start-line="212" selection-start-column="36" selection-end-line="212" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/textShow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26501766">
+          <caret line="144" column="107" selection-start-line="144" selection-start-column="107" selection-end-line="144" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/textphotoShow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23557127">
+          <caret line="134" column="107" selection-start-line="134" selection-start-column="107" selection-end-line="134" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/textphotoShow2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55948174">
+          <caret line="163" column="107" selection-start-line="163" selection-start-column="107" selection-end-line="163" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/textphotoShow2Ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36806342">
+          <caret line="316" column="36" selection-start-line="316" selection-start-column="36" selection-end-line="316" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1487752416383" expanded="true" signature="4590:4613" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/textphotoShowCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3114383">
+          <caret line="296" column="36" selection-start-line="296" selection-start-column="36" selection-end-line="296" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1487752457319" expanded="true" signature="4458:4481" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/textShowCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37712345">
+          <caret line="257" column="36" selection-start-line="257" selection-start-column="36" selection-end-line="257" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/bottomMenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64782095">
+          <caret line="79" column="107" selection-start-line="79" selection-start-column="107" selection-end-line="79" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/toolbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58892816">
+          <caret line="257" column="107" selection-start-line="257" selection-start-column="107" selection-end-line="257" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/panel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17550059">
+          <caret line="242" column="107" selection-start-line="242" selection-start-column="107" selection-end-line="242" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/bottomMenuCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.14382786">
+          <caret line="483" column="36" selection-start-line="483" selection-start-column="36" selection-end-line="483" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/toolbarCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7168743">
+          <caret line="348" column="28" selection-start-line="348" selection-start-column="28" selection-end-line="348" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/panelCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.405436">
+          <caret line="284" column="28" selection-start-line="284" selection-start-column="28" selection-end-line="284" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5877503">
+          <caret line="243" column="107" selection-start-line="243" selection-start-column="107" selection-end-line="243" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/iconButtonDiv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20612486">
+          <caret line="196" column="107" selection-start-line="196" selection-start-column="107" selection-end-line="196" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/tableCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="336" column="36" selection-start-line="336" selection-start-column="36" selection-end-line="336" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/iconButtonDivCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16987543">
+          <caret line="369" column="36" selection-start-line="369" selection-start-column="36" selection-end-line="369" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/zhuxingtu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3533569">
+          <caret line="138" column="107" selection-start-line="138" selection-start-column="107" selection-end-line="138" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/twonav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14605418">
+          <caret line="121" column="107" selection-start-line="121" selection-start-column="107" selection-end-line="121" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/swipeDiv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14605418">
+          <caret line="103" column="107" selection-start-line="103" selection-start-column="107" selection-end-line="103" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/focusimg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9705536">
+          <caret line="111" column="107" selection-start-line="111" selection-start-column="107" selection-end-line="111" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tpl/button.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.647059">
+          <caret line="117" column="107" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/zhuxingtuCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34881088">
+          <caret line="298" column="36" selection-start-line="298" selection-start-column="36" selection-end-line="298" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/swipeDivCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53793883">
+          <caret line="244" column="36" selection-start-line="244" selection-start-column="36" selection-end-line="244" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/twonavCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5753114">
+          <caret line="283" column="36" selection-start-line="283" selection-start-column="36" selection-end-line="283" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/uiListCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="554" column="6" selection-start-line="554" selection-start-column="6" selection-end-line="554" selection-end-column="6" />
+          <folding>
+            <marker date="1483173624266" expanded="true" signature="4079:4893" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="6209:6237" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="9208:9700" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="10223:10325" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="11634:11657" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="11997:12015" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="12336:12367" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="12417:12491" placeholder="..." />
+            <marker date="1483173624266" expanded="true" signature="12740:12772" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/focusimgCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="315" column="36" selection-start-line="315" selection-start-column="36" selection-end-line="315" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ace.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.735294">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="239" column="28" selection-start-line="239" selection-start-column="28" selection-end-line="239" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/domscript_parent/pleasedeleteafterdevelop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/domscript_parent/messageinit_parent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/domscript_parent/messagefunc_parent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/buttonCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="36" selection-start-line="165" selection-start-column="14" selection-end-line="165" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/navCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/angular/editEventCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59456396">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
