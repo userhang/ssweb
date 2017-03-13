@@ -61,6 +61,14 @@ app.controller('textphotoShow2Ctrl', ['$scope','$http', '$location',function tex
         };
         sendMessage_funcdirective(data);
     };
+    $scope.changeTextPhotoShow2Width=function changeTextPhotoShow2Width(){
+        var data = {
+            'seq':$scope.seq,
+            'directive':'changeTextPhotoShow2Width',
+            'attr':{'textphotoShow2Width':$scope.textphotoShow2WidthInput}
+        };
+        sendMessage_funcdirective(data);
+    };
 
     //交换图文位置
     $scope.changeTextPhoto2Position=function changeTextPhoto2Position(){

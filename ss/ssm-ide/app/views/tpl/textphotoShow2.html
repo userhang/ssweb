@@ -103,6 +103,20 @@
         </li>
         <li>
             <div class="row">
+                <div class="col-md-4 col-md-offset-1 textAlignAtRight">宽度</div>
+                <div class="col-md-6">
+                    <input class="form-control input-sm"
+                           type="number"
+                           min="0"
+                           placeholder="宽度"
+                           ng-model="$parent.textphotoShow2WidthInput"
+                           ng-change="changeTextPhotoShow2Width()">
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
                 <div class="col-md-4 col-md-offset-1 textAlignAtRight">图片比例</div>
                 <div class="col-md-6">
                     <input class="form-control input-sm"

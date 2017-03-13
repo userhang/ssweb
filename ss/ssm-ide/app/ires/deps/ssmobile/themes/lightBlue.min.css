@@ -3,6 +3,7 @@ body{
     background:#000;color:#0da4d3;
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     -webkit-touch-callout:none;width:100%;}
+p,a{white-space: pre}
 #ssm{
     -webkit-text-size-adjust:none;
     -webkit-user-select:none;
@@ -338,24 +339,25 @@ body{
     height: inherit;
 }
 #ssm .blockDivBorder{
-    border:solid 1px;
-  
+    border-bottom:solid 2px;
+
 }
 #ssm .blockDivA{
     width: 49%;
-      border-style: solid;
-    border-width:0px 0px 3px 0px;
+    /*border-style: solid;
+    border-width:0px 0px 3px 0px;*/
 }
 #ssm .blockDivB{
     width: 32%;
-    border-style: solid;
-    border-width:0px 0px 3px 0px;
+    /*border-style: solid;
+    border-width:0px 0px 3px 0px;*/
 }
 #ssm .blockDivC{
     width: 24%;
-      border-style: solid;
-    border-width:0px 0px 3px 0px;
+    /*border-style: solid;
+    border-width:0px 0px 3px 0px;*/
 }
+
 #ssm .blockDiv2B{
     width:64%;
       border-style: solid;

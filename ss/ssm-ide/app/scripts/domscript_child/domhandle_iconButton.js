@@ -28,6 +28,11 @@ var ssM = $.ssm();
         res = _this.height();
         return res;
     };
+//获取图标按钮右移
+    $.fn.getIconButtonHeight = function () {
+        var reg=/\d+/;
+        return $(this).css('marginLeft').match(reg)[0];
+    };
 
     //获取图标按钮宽度
     $.fn.getIconButtonWidth = function () {
@@ -196,6 +201,12 @@ var ssM = $.ssm();
         aLabelHrefList.aLabelEffect();
         _this.attr("href","#"+iconButtonHrefContent);
         aLabelHrefList.aLabelDisable();
+        sendMessage_funcpanelinit($(this));
+    };
+  //修改图标按钮右移距离
+    $.fn.changeIconButtonMargin = function (marginLeft) {
+        var _this=$(this);
+        _this.css("marginLeft",marginLeft+"px");
         sendMessage_funcpanelinit($(this));
     };
 

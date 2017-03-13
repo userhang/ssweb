@@ -52,6 +52,13 @@
         res = _this.height();
         return res;
     };
+//获取当前图文展示2宽度
+    $.fn.getTextPhotoShow2Width = function () {
+        var _this=$(this),
+            res;
+        res = _this.width();
+        return res;
+    };
 
     //获取当前上下比例
     $.fn.getTextPhotoShow2Ratio = function () {
@@ -121,6 +128,12 @@
     $.fn.changeTextPhotoShow2Height = function (height) {
         var _this=$(this);
         _this.css("height",height+"px");
+        sendMessage_funcpanelinit($(this));
+    };
+//改变图文展示2的宽度
+    $.fn.changeTextPhotoShow2Width = function (width) {
+        var _this=$(this);
+        _this.css("width",width+"px");
         sendMessage_funcpanelinit($(this));
     };
 

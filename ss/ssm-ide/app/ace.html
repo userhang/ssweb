@@ -20,6 +20,7 @@
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="scripts/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/ace-builds/src-noconflict/ext-settings_menu.js"></script>
     <script src="scripts/ace-builds//src-noconflict/ext-language_tools.js"></script>
 
 
@@ -34,28 +35,66 @@
             <a class="navbar-brand" href="#">编辑绑定事件</a>
         </div>
 
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
 
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">主题<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ace.html">monokai</a></li>
+                        <li><a href="ace.html?theme=ace/theme/twilight">twilight</a></li>
+                        <li><a href="ace.html?theme=ace/theme/chorme">chorme</a></li>
+                        <li><a href="ace.html?theme=ace/theme/chaos">chaos</a></li>
+                        <li><a href="ace.html?theme=ace/theme/dawn">dawn</a></li>
+                        <li><a href="ace.html?theme=ace/theme/dreamweaver">dreamweaver</a></li>
+                        <li><a href="ace.html?theme=ace/theme/github">github</a></li>
+                        <li><a href="ace.html?theme=ace/theme/kuroir">kuroir</a></li>
+                        <li><a href="ace.html?theme=ace/theme/textmate">textmate</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">字体大小</a></li>
+                <li class="dropdown" style="margin-top: 8px">
+                    <select class="form-control" id="fontsize">
+                        <option>12px</option>
+                        <option>15px</option>
+                        <option>20px</option>
+                        <option>24px</option>
+                        <option>36px</option>
+                    </select>
+                </li>
+                <li><a href="#">模式选择</a></li>
+                <li class="dropdown" style="margin-top: 8px">
+                    <select class="form-control" id="modeselect">
+                        <option>javascript</option>
+                        <option>html</option>
+
+                    </select>
+                </li>
+            </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
-                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-top: 8px">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-top: 8px" onclick="destroy()">destroy</button>
                 <button type="button" id="saveButton" class="btn btn-primary" style="margin-top: 8px" onclick="save()">Save</button>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-
-                <div id="editor" style="margin-top: 60px">
-                </div>
+<div id="editor" style="margin-top: 60px">
+</div>
 
 <script type="text/javascript">
+        var cateval="";
+        var category=window.location.search;
+        //截取，获取获得category的具体值
+        cateval = category.substring(category.lastIndexOf('=')+1, category.length);
 
-
-        var initJs="";
-
+          var initJs="";
             $.ajax({
                 cache: false,
                 type: "get",
@@ -70,26 +109,39 @@
                 }
             });
 
-
-
-
-
         ace.require("ace/ext/language_tools");
         var editor = ace.edit("editor");
+        ace.require('ace/ext/settings_menu').init(editor);
         editor.setOptions({
             enableBasicAutocompletion: true,
             enableSnippets: true,
             enableLiveAutocompletion: true
         });
-        editor.setTheme("ace/theme/monokai");
-        editor.getSession().setMode("ace/mode/javascript");
-        editor.setValue(initJs);
+        editor.commands.addCommands([{
+            name: "showSettingsMenu",
+            bindKey: {win: "Ctrl-q", mac: "Command-q"},
+            exec: function(editor) {
+                editor.showSettingsMenu();
+            },
+            readOnly: true
+        }]);
+       // editor.setShowPrintMargin(false);
+        //editor.resize();
+        //editor.setAnimatedScroll(true);
+        editor.getReadOnly();
+       if( cateval.length>2){
+        editor.setTheme(cateval);
 
+
+       }else {
+         editor.setTheme("ace/theme/monokai");
+       }
+      editor.getSession().setMode("ace/mode/javascript");
+
+      editor.setValue(initJs);
 
         var save=function(){
-
             $.ajax({
-
                 type: "post",
                 url:"/acesave",
                 data: {acejs: editor.getValue()},
@@ -103,7 +155,48 @@
             });
         }
 
+        var destroy=function(){
+          destroy();
+        }
+//字体大小
+     var selectfont=document.getElementById("fontsize");
+    // var selectchfont=select.lastChild;
+     selectfont.onchange = function(){
+         var selectIndexfont = document.getElementById("fontsize").selectedIndex;//获得是第几个被选中了
+         var selectTextfont = document.getElementById("fontsize").options[selectIndexfont].text //获得被选中的项目的文本
+         if(selectTextfont=="12px"){
+             document.getElementById('editor').style.fontSize='12px';
+         }else if(selectTextfont=="15px"){
+             document.getElementById('editor').style.fontSize='15px';
+         }else if(selectTextfont=="20px"){
+             document.getElementById('editor').style.fontSize='20px';
+         }else if(selectTextfont=="24px"){
+             document.getElementById('editor').style.fontSize='24px';
+         }else if(selectTextfont=="36px"){
+             document.getElementById('editor').style.fontSize='36px';
+         }else{
+             document.getElementById('editor').style.fontSize='12px';
+         }
 
+     };
+
+//模式
+     var selectmode=document.getElementById("modeselect");
+    // var selectch=select.lastChild;
+     selectmode.onchange = function(){
+         var selectIndexmode = document.getElementById("modeselect").selectedIndex;//获得是第几个被选中了
+         var selectTextmode = document.getElementById("modeselect").options[selectIndexmode].text //获得被选中的项目的文本
+         if(selectTextmode=="html"){
+             editor.getSession().setMode("ace/mode/html");
+         }
+         else if (selectTextmode=="javascript"){
+         editor.getSession().setMode("ace/mode/javascript");
+        }
+       else{
+         editor.getSession().setMode("ace/mode/html");
+            }
+
+     };
 
 
 </script>

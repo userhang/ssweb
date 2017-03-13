@@ -544,17 +544,18 @@
                组件
             </div>
             <div class="uimenuselectbox" >
-                <div class="uimenuselect uimenutheme " ng-class="{uimenuactive:themeislive}" ng-click="tabtoggle_theme()" ng-init="themeislive=false">
-                    Theme
-                </div>
-                <div class="uimenuselect uimenucss " ng-class="{uimenuactive:cssislive}" ng-click="tabtoggle_css()" ng-init="cssislive=true">
+
+                <div class="uimenuselect uimenucss " ng-class="{uimenuactive:cssislive}" ng-click="tabtoggle_css()" ng-init="cssislive=false">
                     CSS
+                </div>
+                <div class="uimenuselect uimenutheme " ng-class="{uimenuactive:themeislive}" ng-click="tabtoggle_theme()" ng-init="themeislive=true">
+                    Theme
                 </div>
             </div>
 
             <div class="uipane uilist" ng-controller="uiListCtrl">
-                <div class=" uipanecontent uipanetheme" ng-show="tab_theme">
-                    <li  id="{{theme.name}}"  ng-repeat="theme in themes" onclick="sendMessage_changetheme(event,'mainIframe','changeTheme')">
+                <div class=" uipanecontent uipanetheme" ng-show="tab_theme"  style="background-color:#0D77B6;">
+                    <li  class=" uipanecontent uipanetheme" id="{{theme.name}}"  ng-repeat="theme in themes" onclick="sendMessage_changetheme(event,'mainIframe','changeTheme')">
                         <span id="{{theme.name}}">{{theme.comment}}</span>
                     </li>
                 </div>
@@ -592,7 +593,7 @@
                         <!--<div class="row">-->
                             <!--<div class="col-md-6" ng-repeat="csselem_component in csselem_components" ng-class="{'uipanecontenthide':($index%2)}">-->
                                 <!--<span id="{{csselem_component.show.id}}" draggable="true" ondragstart="drag(event)">-->
-                                    <!--<!--<i class="{{csselem_component.show.id}}" ng-bind-html="csselem_component.show.icon"></i>-->-->
+                                    <!--<!--<i class="{{csselem_component.show.id}}" ng-bind-html="csselem_component.show.icon"></i>-->
                                     <!--{{csselem_component.show.comment}}-->
                                  <!--</span>-->
                             <!--</div>-->
@@ -607,7 +608,7 @@
                         <!--<div class="row">-->
                             <!--<div class="col-md-6" ng-repeat="csselem_mutual in csselem_mutuals" ng-class="{'uipanecontenthide':($index%2)}">-->
                                 <!--<span id="{{csselem_mutual.show.id}}" draggable="true" ondragstart="drag(event)">-->
-                                    <!--<!--<i class="{{csselem_mutual.show.id}}" ng-bind-html="csselem_mutual.show.icon"></i>-->-->
+                                    <!--<!--<i class="{{csselem_mutual.show.id}}" ng-bind-html="csselem_mutual.show.icon"></i>-->
                                     <!--{{csselem_mutual.show.comment}}-->
                                  <!--</span>-->
                             <!--</div>-->
@@ -665,14 +666,14 @@
     </div>
 
     <!-- Modal 用户写代码的地方-->
-    <div class="modal fade" id="editEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="editEventCtrl">
+    <div class="modal fade" id="editEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="editEventCtrl" style="margin-top: 200px">
         <div class="modal-dialog cusmodal">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">编辑绑定事件</h4>
                 </div>
-                <div class="modal-body cusmodal">
+                <div class="modal-body">
                     <div id="editor">
                     </div>
                 </div>

@@ -55,7 +55,8 @@
     $.fn.changeDivHeight = function (height) {
 
         var _this=$(this).children('div');
-        _this.css("height",height+"px");
+        _this.css("height",height-10);
         sendMessage_funcpanelinit($(this));
     };
+
 })(jQuery);

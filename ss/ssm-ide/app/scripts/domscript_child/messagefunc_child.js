@@ -317,6 +317,11 @@ messenger.listen(function (msg) {
         case 'changeTextPhotoShow2FontWeight':
             jQuery("[seq="+msg.seq+"]").changeTextPhotoShow2FontWeight(msg.attr.textphotoShow2FontWeight);
             break;
+        //修改宽度
+        case 'changeTextPhotoShow2Width':
+            jQuery("[seq="+msg.seq+"]").changeTextPhotoShow2Width(msg.attr.textphotoShow2Width);
+            break;
+
         //修改高度
         case 'changeTextPhotoShow2Height':
             jQuery("[seq="+msg.seq+"]").changeTextPhotoShow2Height(msg.attr.textphotoShow2Height);
@@ -751,6 +756,17 @@ messenger.listen(function (msg) {
             break;
 
 //图标按钮（iconButton）
+        //修改图标按钮右移
+        case 'changeIconButtonMargin':
+            jQuery("[seq="+msg.seq+"]").changeIconButtonMargin(msg.attr.iconButtonMargin);
+            break;
+        case 'changeTextShowBgColor':
+            jQuery("[seq="+msg.seq+"]").changeComponentBackgroundColor(msg.attr.textShowBgColor, undefined, "textShowBgColor");
+            break;
+        //修改文本颜色
+        case 'changeTextShowColor':
+            jQuery("[seq="+msg.seq+"]").changeComponentContentColor(msg.attr.textShowColor, undefined, "textShowColor");
+            break;
         //修改图标按钮文字内容
         case 'changeIconButtonContent':
             jQuery("[seq="+msg.seq+"]").changeIconButtonContent(msg.attr.iconButtonContent);

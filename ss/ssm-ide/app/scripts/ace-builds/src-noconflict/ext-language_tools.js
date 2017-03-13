@@ -1288,12 +1288,12 @@ Autocomplete.startCommand = {
     exec: function(editor) {
         if (!editor.completer)
             editor.completer = new Autocomplete();
-        editor.completer.autoInsert = 
+        editor.completer.autoInsert = false;
         editor.completer.autoSelect = true;
         editor.completer.showPopup(editor);
         editor.completer.cancelContextMenu();
     },
-    bindKey: "Ctrl-Space|Ctrl-Shift-Space|Alt-Space"
+    bindKey: "Ctrl-Space|Ctrl-Shift-Space|Alt-Space|Ctrl-P"
 };
 
 var FilteredList = function(array, filterText, mutateData) {

@@ -180,6 +180,7 @@ body {
 	position: relative;
 	top:100px;
 }
+
 #myHistoryVersion .modal-dialog .dialogblock,#manageUser .modal-dialog .dialogblock{
 	padding-bottom: 20px;
 	margin-bottom: 40px;
@@ -195,7 +196,9 @@ body {
     padding:0px;
     margin-left:20px;
 }
-
+.uipanetheme{
+	background-image: linear-gradient(to bottom,#2891CA,#0A6FA7,#2891CA);
+}
 .logo-img{
     width:auto;
     height:100%;
@@ -264,7 +267,7 @@ body {
 
 .zebra tfoot td:only-child{
     -moz-border-radius: 0 0 6px 6px;
-    -webkit-border-radius: 0 0 6px 6px
+    -webkit-border-radius: 0 0 6px 6px;
 border-radius: 0 0 6px 6px
 }
 

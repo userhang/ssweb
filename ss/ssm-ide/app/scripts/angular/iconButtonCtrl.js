@@ -33,12 +33,40 @@ app.controller('iconButtonCtrl', ['$scope', '$location',function iconButtonCtrl(
         window.open("ace.html");
     };
 
+    //修改背景颜色
+    $scope.changeTextShowBgColor=function changeTextShowBgColor(){
+        var data = {
+            'seq':$scope.seq,
+            'directive':'changeTextShowBgColor',
+            'attr':{'textShowBgColor':$scope.textShowBgColorInput}
+        };
+        sendMessage_funcdirective(data);
+    };
+    //修改字体颜色
+    $scope.changeTextShowColor=function changeTextShowColor(){
+        var data = {
+            'seq':$scope.seq,
+            'directive':'changeTextShowColor',
+            'attr':{'textShowColor':$scope.textShowColorInput}
+        };
+        sendMessage_funcdirective(data);
+    };
+
     //修改图标按钮的高度
     $scope.changeIconButtonHeight=function changeIconButtonHeight(){
         var data = {
             'seq':$scope.seq,
             'directive':'changeIconButtonHeight',
             'attr':{'iconButtonHeight':$scope.iconButtonHeightInput}
+        };
+        sendMessage_funcdirective(data);
+    };
+   //修改图标按钮右移
+    $scope.changeIconButtonMargin=function changeIconButtonMargin(){
+        var data = {
+            'seq':$scope.seq,
+            'directive':'changeIconButtonMargin',
+            'attr':{'iconButtonMargin':$scope.iconButtonMarginInput}
         };
         sendMessage_funcdirective(data);
     };
